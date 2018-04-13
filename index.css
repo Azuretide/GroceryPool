@@ -1,3 +1,43 @@
 html {
 	background-color: skyblue;
 }
+
+.wireframe {
+	border-width: thin;
+	border-style: dashed;
+	border-color: skyblue;
+}
+
+.header {
+	height: 12.5vh;
+}
+
+.content {
+	height: 75vh;
+}
+
+.paging {
+	height: 60vh;
+	overflow-y: scroll;
+}
+
+.details-page {
+	height: 60vh;
+}
+
+.store-search-bar {
+	height: 15vh;
+}
+
+.delivery-details {
+	height: 100%;
+}
+
+.order-progress {
+	height: 7.5vh;
+	margin-top: 2vh;
+}
+
+.footer {
+	height: 12.5vh;
+}
