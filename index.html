@@ -23,14 +23,35 @@
 	<!-- Constructible EventTarget polyfill — Only Chrome 64+ supports constructible EventTarget objects natively -->
 	<script src="https://unpkg.com/event-target@latest/min.js"></script>
 
-	<script src="index.js"></script>
   	<script src="util.js"></script>
+  	<script src="index.js"></script>
 </head>
 
 <body>
   <header class="wireframe header">
   	<!-- Header for grocerypool website -->
-	Header
+	<a href="#"><h2 id="grocerypool">GroceryPool</h2></a>
+	<div id="navbar-right">
+		<h5 id="logininfo">Hi, Sarah</h5>
+		<div class="dropdown">
+		  <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    <i class="material-icons" style="font-size: 35px; color: white">menu</i>
+		  </button>
+		  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+		    <li>
+		    	<center id="sarah">
+		    		<i class="material-icons" style="font-size: 75px">mood</i>
+		    		Sarah
+		    	</center>
+		    </li>
+		    <li><a href="#">Profile</a></li>
+		    <li><a href="#">Manage Friends</a></li>
+		    <li><a href="#">Your Requests</a></li>
+		    <li><a href="#">Your Deliveries</a></li>
+		    <li><a href="#">Logout</a></li>
+		  </ul>
+		</div>
+	</div>
   </header>
   <div class="wireframe content">
 	<div class="wireframe order-progress col-md">
