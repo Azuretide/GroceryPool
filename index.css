@@ -9,6 +9,9 @@ li {
 	padding-bottom: 3px;
 }
 
+
+/* Navbar Styling */
+
 #dropdownMenu1 {
 	background: none;
 	height: 100%;
@@ -52,8 +55,9 @@ li {
 	background-color: limegreen;
 }
 
+
 .content {
-	height: 75vh;
+	height: 79vh;
 }
 
 .paging {
@@ -78,6 +82,18 @@ li {
 	margin-top: 2vh;
 }
 
+
+/* Footer Styling */
+
 .footer {
-	height: 12.5vh;
+	display: flex;
+	justify-content: flex-end;
+	height: 12vh;
+	padding: 10px;
+	background-color: #98e698;
+}
+
+#confirmrequest {
+	width: 40%;
+	display: none;
 }
