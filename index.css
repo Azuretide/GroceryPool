@@ -9,7 +9,6 @@ li {
 	padding-bottom: 3px;
 }
 
-
 /* Navbar Styling */
 
 #dropdownMenu1 {
@@ -122,6 +121,26 @@ html {
 .order-progress {
 	height: 7.5vh;
 	margin-top: 2vh;
+}
+
+/* Friends page */
+
+.friends-page {
+	height: 100%;
+}
+
+.friends-info-bar {
+	height: 20%;
+	text-align: center;
+}
+.friends-select {
+	height: 70%;
+	overflow-y: scroll;
+}
+
+.friends-select li {
+	list-style-type: none;
+	border: thin dashed grey;
 }
 
 /* Footer Styling */
