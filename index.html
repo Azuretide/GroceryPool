@@ -66,7 +66,21 @@
 	<!-- Add four different pages in the html, we will hide and show accordingly -->
 	<div class="wireframe paging">
 	<div class="wireframe details-page">
-		<div class="wireframe store-search-bar">Search bar</div>
+		<div class="wireframe store-search-bar d-flex align-items-center">
+			<div class="wireframe container search-bar-container">
+				<div class="wireframe row">
+					<div class="wireframe col-md-1 col-12 d-flex align-items-center justify-content-center">
+						<i class="material-icons">location_on</i>
+					</div>
+					<div class="wireframe col-md-10 col-12 input-group">
+					    <input type="text" class="form-control" id="search-bar" placeholder="Search store...">
+					</div>
+					<button class="wireframe col-md-1 col-12 btn-primary d-flex align-items-center justify-content-center">
+						<i class="material-icons">search</i>
+					</button>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 			<div class="wireframe row delivery-details">
 				<div class="wireframe col">
@@ -118,7 +132,53 @@
 			</div>
 		</div>
 	</div>
-	<div class="wireframe items-page"></div>
+	<div class="wireframe items-page">
+		<div class="container wireframe">
+			<div class="wireframe row">
+				<div class="wireframe col-12 col-md-7">
+					<h3>Your Items</h3>
+				</div>
+				<div class="wireframe col-12 col-md-5">
+					<h3>Saved Items</h3>
+				</div>
+				<div class="w-100"></div>
+				<div class="wireframe col-12 col-md-7">
+					<ul>
+						<li class="my-2 input-group">
+							<input type="text" name="" value="">
+							<div class="input-group-append">
+								<div class="input-group-text"><i class="material-icons">save</i></div>
+							</div>
+						</li>
+						<li class="my-2 input-group">
+							<input type="text" name="" value="">
+							<div class="input-group-append">
+								<div class="input-group-text"><i class="material-icons">save</i></div>
+							</div>
+						</li>
+						<li class="my-2 input-group">
+							<input type="text" name="" value="">
+							<div class="input-group-append">
+								<div class="input-group-text"><i class="material-icons">save</i></div>
+							</div>
+						</li>
+						<li class="my-2 input-group">
+							<input type="text" name="" value="">
+							<div class="input-group-append">
+								<div class="input-group-text"><i class="material-icons">save</i></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="wireframe col-12 col-md-5">
+					<ul>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="wireframe friends-page"></div>
 	<div class="wireframe confirmation-page"></div>
 	</div>

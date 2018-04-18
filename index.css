@@ -82,6 +82,47 @@ li {
 	margin-top: 2vh;
 }
 
+html {
+	background-color: skyblue;
+}
+
+.wireframe {
+	border-width: thin;
+	border-style: dashed;
+	border-color: skyblue;
+}
+
+.details-page {
+	height: 60vh;
+}
+
+.store-search-bar {
+	height: 15vh;
+}
+
+.search-bar-container {
+	padding-top: auto;
+}
+
+.delivery-details {
+	height: 100%;
+}
+
+.items-page {
+	height: 100%;
+}
+
+.items-page ul {
+	list-style-type: none;
+}
+.items-page li {
+	border: thin dashed skyblue;
+}
+
+.order-progress {
+	height: 7.5vh;
+	margin-top: 2vh;
+}
 
 /* Footer Styling */
 
