@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GroceryPool</title>
+    <!-- Load bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <strong>Grocery Pool</strong>
+            </a>
+            <div class="col-3 text-right pr-0">
+                <span class="text-white mr-5">Hi, Sarah!</span>
+                <a href="#3" class="navbar-toggler pt-1 pb-2" onclick="toggleInfo()">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+
+                <div class="user_info_header">
+                    <div class="user_info_blk text-white">
+                        <div class="user_avatar text-center">
+                            <img src="http://via.placeholder.com/180x180" class="img-fluid " />
+                        </div>
+                        <h5>Sarah</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#3">Profile</a>
+                            </li>
+                            <li>
+                                <a href="#3">Manage Trends List</a>
+                            </li>
+                            <li>
+                                <a href="#3">Your requests</a>
+                            </li>
+                            <li>
+                                <a href="#3">Your Deliveries</a>
+                            </li>
+                            <li>
+                                <a href="#3">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="row justify-content-between align-items-center mx-0 my-5">
+            <h4 class="mb-0 mr-5">My Requests</h4>
+            <a href="#3" class="btn btn-primary">+ New Request</a>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-10">
+
+                <div class="card py-3 mb-4">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="col-2">
+                            <img src="http://via.placeholder.com/150x150" class="img-fluid " />
+                        </div>
+                        <div class="col-7">
+                            <h4 class="mb-3 mt-0">Status: <strong class="text-uppercase">REQUESTED</strong></h4>
+                            <p class="mb-0">Requested: Just Now</p>
+                            <p class="mb-0">Shopping List: Ribeye Steak</p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <a href="edit_request.html" class="btn btn-danger ">Edit</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card py-3 mb-4">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="col-2">
+                            <img src="http://via.placeholder.com/150x150" class="img-fluid " />
+                        </div>
+                        <div class="col-7">
+                            <h4 class="mb-3 mt-0">Status: <strong class="text-uppercase">Accepted</strong></h4>
+                            <p class="mb-0">Requested: 3 min ago</p>
+                            <p class="mb-0">Shopping List: Milk, Eggs</p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <a href="#3" class="btn btn-success">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

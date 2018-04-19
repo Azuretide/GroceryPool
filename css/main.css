@@ -1,0 +1,83 @@
+/* line 2, ../sass/main.sass */
+main h1 {
+  font-size: 86px;
+}
+
+/* line 6, ../sass/main.sass */
+.user_info_header {
+  width: 230px;
+  background: #4a5561;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: none;
+  z-index: 999;
+}
+/* line 14, ../sass/main.sass */
+.user_info_header.active {
+  display: inline-block;
+}
+/* line 17, ../sass/main.sass */
+.user_info_header .user_info_blk .user_avatar {
+  padding: 20px;
+}
+/* line 19, ../sass/main.sass */
+.user_info_header .user_info_blk .user_avatar img {
+  border-radius: 100%;
+}
+/* line 21, ../sass/main.sass */
+.user_info_header .user_info_blk h5 {
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  line-height: 40px;
+  margin: 0 0 10px;
+}
+/* line 27, ../sass/main.sass */
+.user_info_header .user_info_blk ul {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+/* line 30, ../sass/main.sass */
+.user_info_header .user_info_blk ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 32, ../sass/main.sass */
+.user_info_header .user_info_blk ul li:last-child {
+  border-bottom: none;
+}
+/* line 34, ../sass/main.sass */
+.user_info_header .user_info_blk ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+/* line 36, ../sass/main.sass */
+.user_info_header .user_info_blk ul li a {
+  line-height: 40px;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 15px;
+  color: #fff;
+}
+/* line 44, ../sass/main.sass */
+.user_info_header .user_info_blk ul li a:hover {
+  text-decoration: none;
+}
+
+/* line 49, ../sass/main.sass */
+.edit_page .col form {
+  padding-bottom: 50px;
+}
+/* line 51, ../sass/main.sass */
+.edit_page .col form textarea {
+  min-height: 210px;
+}
+/* line 53, ../sass/main.sass */
+.edit_page .col form center {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
