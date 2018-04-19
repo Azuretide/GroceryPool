@@ -2,12 +2,12 @@ html {
 	background-color: skyblue;
 }
 
-li {
+/* li {
 	text-align: center;
 	border-bottom: 1px solid black;
 	padding-top: 3px;
 	padding-bottom: 3px;
-}
+} */
 
 .wireframe {
 	border-width: thin;
@@ -138,12 +138,12 @@ h4 {
 }
 
 .paging {
-	height: 60vh;
+	height: 67vh;
 	overflow-y: scroll;
 }
 
 .details-page {
-	height: 60vh;
+	height: 100%;
 }
 
 .store-search-bar {
@@ -186,6 +186,27 @@ h4 {
 .friends-select li {
 	list-style-type: none;
 	border: thin dashed grey;
+}
+
+.friends-select li label {
+	width: 90%;
+}
+
+/* Confirmation page */
+.confirmation-page {
+	height: 100%;
+}
+
+#confirm-section-titles {
+	height: 20%;
+}
+
+#confirm-section-details {
+	height: 40vh;
+}
+
+#confirm-section-edit-buttons {
+	height: 10%;
 }
 
 /* Footer Styling */
