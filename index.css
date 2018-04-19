@@ -15,6 +15,12 @@ html {
 	border-color: skyblue;
 }
 
+.wireframe {
+	border-width: thin;
+	border-style: dashed;
+	border-color: skyblue;
+}
+
 /* Navbar Styling */
 
 #dropdownMenu1 {
