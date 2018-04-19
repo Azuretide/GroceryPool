@@ -1,0 +1,231 @@
+html {
+	background-color: skyblue;
+}
+
+/* li {
+	text-align: center;
+	border-bottom: 1px solid black;
+	padding-top: 3px;
+	padding-bottom: 3px;
+} */
+
+.wireframe {
+	border-width: thin;
+	border-style: dashed;
+	border-color: skyblue;
+}
+
+.wireframe {
+	border-width: thin;
+	border-style: dashed;
+	border-color: skyblue;
+}
+
+/* Navbar Styling */
+
+#dropdownMenu1 {
+	background: none;
+	height: 100%;
+}
+
+#grocerypool {
+	margin-top: 5px !important;
+	color: white;
+}
+
+#logininfo {
+	margin: 12px !important;
+	color: white;
+}
+
+#navbar-right {
+	display: flex;
+	align-content: center;
+	padding: 3px;
+}
+
+#sarah {
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.header {
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+	height: 9vh;
+	padding-left: 10px;
+	background-color: #6bbf4e;
+}
+
+
+/* Breadcrumbs Styling */
+
+.order-progress {
+	height: 9.5vh;
+	display: flex;
+	padding: 0px !important;
+}
+
+.crumb {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	background-color: #d6f5d6;
+	flex-grow: 1;
+}
+
+.crumbi {
+	font-size: 35px !important;
+	margin-right: 15px;
+}
+
+h4 {
+	margin: 0px !important;
+}
+
+/* Below code sourced from: http://code-chunk.com/chunks/543df4c394758/bootstrap-arrow-shaped-buttons */
+.btn-arrow-right {
+    position: relative;
+    padding-left: 36px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after { /* make two squares (before and after), looking similar to the button */
+    content:"";
+    position: absolute;
+    top: 7px; /* move it down because of rounded corners */
+    width: 6.72vh; /* same as height */
+    height: 6.72vh; /* button_outer_height / sqrt(2) */
+    background: inherit; /* use parent background */
+    border: inherit; /* use parent border */
+    border-left-color: transparent; /* hide left border */
+    border-bottom-color: transparent; /* hide bottom border */
+    border-radius: 0px 4px 0px 0px; /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+    -webkit-border-radius: 0px 4px 0px 0px;
+    -moz-border-radius: 0px 4px 0px 0px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after {
+    transform: rotate(45deg); /* rotate right arrow squares 45 deg to point right */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+.btn-arrow-right:before { /* align the "before" square to the left */
+    left: -3.36vh;
+}
+.btn-arrow-right:after { /* align the "after" square to the right */
+    right: -3.36vh;
+}
+.btn-arrow-right:after { /* bring arrow pointers to front */
+    z-index: 1;
+}
+.btn-arrow-right:before { /* hide arrow tails background */
+    background-color: black;
+}
+
+#cinfo:before {
+	display: none;
+}
+
+#cconfirm:after {
+	display: none;
+}
+
+
+
+/* Page Body */
+
+.content {
+	height: 79vh;
+}
+
+.paging {
+	height: 67vh;
+	overflow-y: scroll;
+}
+
+.details-page {
+	height: 100%;
+}
+
+.store-search-bar {
+	height: 15vh;
+}
+
+.delivery-details {
+	height: 100%;
+}
+
+/* Items Page */
+
+.items-page {
+	height: 100%;
+}
+
+.items-page ul {
+	list-style-type: none;
+}
+.items-page li {
+	border: thin dashed skyblue;
+}
+
+
+/* Friends Page */
+
+.friends-page {
+	height: 100%;
+}
+
+.friends-info-bar {
+	height: 30%;
+	text-align: center;
+}
+.friends-select {
+	height: 70%;
+	overflow-y: scroll;
+}
+
+.friends-select li {
+	list-style-type: none;
+	border: thin dashed grey;
+}
+
+.friends-select li label {
+	width: 90%;
+}
+
+/* Confirmation page */
+.confirmation-page {
+	height: 100%;
+}
+
+#confirm-section-titles {
+	height: 20%;
+}
+
+#confirm-section-details {
+	height: 40vh;
+}
+
+#confirm-section-edit-buttons {
+	height: 10%;
+}
+
+/* Footer Styling */
+
+.footer {
+	display: flex;
+	justify-content: flex-end;
+	height: 12vh;
+	padding: 10px;
+	background-color: #6bbf4e;
+}
+
+#confirmrequest {
+	width: 40%;
+	display: none;
+}
