@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation page</title>
+    <link href="libs/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="navbar navbar-dark bg-dark box-shadow fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <strong>Grocery Pool</strong>
+            </a>
+            <div class="col-3 text-right pr-0">
+                <span class="text-white mr-5">Hi, Sarah!</span>
+                <a href="#3" class="navbar-toggler pt-1 pb-2" onclick="toggleInfo()">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+
+                <div class="user_info_header">
+                    <div class="user_info_blk text-white">
+                        <div class="user_avatar text-center">
+                            <img src="http://via.placeholder.com/180x180" class="img-fluid " />
+                        </div>
+                        <h5>Sarah</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#3">Profile</a>
+                            </li>
+                            <li>
+                                <a href="#3">Manage Trends List</a>
+                            </li>
+                            <li>
+                                <a href="#3">Your requests</a>
+                            </li>
+                            <li>
+                                <a href="#3">Your Deliveries</a>
+                            </li>
+                            <li>
+                                <a href="#3">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</header>
+
+<main class="home_page">
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 100vh">
+            <div class="col-8 text-center">
+                <h1>Thanks!</h1>
+                <h2>Your request has been made.</h2>
+                <h4 class="mt-5">Would you like to:</h4>
+                <div class="action d-flex justify-content-center align-items-center mt-3">
+                    <a href="my_requests.html" class="btn btn-lg btn-info">Manage requests</a>
+                    <h3 class="mx-4">OR</h3>
+                    <a href="#3" class="btn btn-lg btn-secondary">Start New Request</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
