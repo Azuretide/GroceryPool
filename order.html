@@ -9,6 +9,8 @@
 
 	<!-- Load style sheets -->
 	<link rel="stylesheet" href="order.css">
+	<link rel="stylesheet" href="awesomplete/awesomplete.css">
+
 	<!-- Load bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,6 +27,7 @@
 
   	<script src="util.js"></script>
   	<script src="order.js"></script>
+  	<script src="awesomplete/awesomplete.js"></script>
 </head>
 
 <body>
@@ -71,11 +74,8 @@
 						<i class="material-icons">location_on</i>
 					</div>
 					<div class="wireframe col-md-10 col-12 input-group">
-					    <input type="text" class="form-control" id="search-bar" placeholder="Search store...">
+					    <input type="text" class="form-control awesomplete" id="search-bar" placeholder="Search store..." data-list="Trader Joe's, Star Market (Shaw's), Costco, H-mart, 7/11, Safeway, Walmart">
 					</div>
-					<button class="wireframe col-md-1 col-12 btn-primary d-flex align-items-center justify-content-center">
-						<i class="material-icons">search</i>
-					</button>
 				</div>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
 						</div>
 						<div class="wireframe col">
 							<form action="">
-								<div class="row">
+								<div class="row" id="new-address-form">
 									<input type="radio" name="Radio" id="default-address" class="col-1">
 									<address class="wireframe default-address-box" class="col">
 										100 Lala way <br>
@@ -97,7 +97,9 @@
 									</address>
 									<div class="w-100"></div>
 									<input type="radio" name="New Address" id="new-address" class="col-1">
-									<textarea type="textarea" id="new-address-text" class="col-8" rows="3">Placeholder</textarea>
+									<textarea type="textarea" id="new-address-text" class="col-8" rows="3" placeholder="A different address"></textarea>
+									<div class="w-100"></div>
+									<button class="col-3 offset-1" type="button" name="button">Add</button>
 								</div>
 							</form>
 						</div>
