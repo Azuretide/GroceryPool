@@ -100,7 +100,7 @@ h4 {
 
 .paging {
 	height: 69.5vh;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 }
 
 .details-page {
