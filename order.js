@@ -179,6 +179,27 @@ Util.events(document, {
 				Util.one("#nextbutton_items").disabled = true;
 			}
 
+			var isFriendChecked = false;
+
+			while(Util.one("#confirm-section-details-friends-list").childNodes.length > 0) {
+				Util.one("#confirm-section-details-friends-list").removeChild(Util.one("#confirm-section-details-friends-list").childNodes[0]);
+			}
+
+			Util.all(".friend-check").forEach((check) => {
+				isFriendChecked = isFriendChecked || check.checked;
+				if(check.checked) {
+					var liItem = Util.create("li", {});
+					liItem.innerText = check.nextSibling.innerText || check.nextSibling.nextSibling.innerText;
+					Util.one("#confirm-section-details-friends-list").appendChild(liItem);
+				}
+			});
+
+			if(isFriendChecked === true) {
+				Util.one("#nextbutton_friends").disabled = false;
+			} else {
+				Util.one("#nextbutton_friends").disabled = true;
+			}
+
 		}, /* how often we validate */ 500);
 
 		Util.events(Util.one("#nextbutton_detail"), {
