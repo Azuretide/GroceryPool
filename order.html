@@ -79,10 +79,10 @@
 
   <div class="content">
 	<div class="order-progress col-md">
-		<button type="button" class="btn btn-arrow-right crumb active" id="cinfo"><i class="material-icons crumbi">info</i><h3>Details</h3></button>
-		<button type="button" class="btn btn-arrow-right crumb" id="ccart"><i class="material-icons crumbi">shopping_cart</i><h3>Items</h3></button>
-		<button type="button" class="btn btn-arrow-right crumb" id="cfriends"><i class="material-icons crumbi">face</i><h3>Friends</h3></button>
-		<button type="button" class=" btn btn-arrow-right crumb" id="cconfirm"><i class="material-icons crumbi">check_circle</i><h3>Confirm</h3></button>
+		<button type="button" class="btn btn-arrow-right crumb crumb-active" id="cinfo"><i class="material-icons crumbi">info</i><h3>Details</h3></button>
+		<button type="button" class="btn btn-arrow-right crumb" id="citems" disabled><i class="material-icons crumbi">shopping_cart</i><h3>Items</h3></button>
+		<button type="button" class="btn btn-arrow-right crumb" id="cfriends" disabled><i class="material-icons crumbi">face</i><h3>Friends</h3></button>
+		<button type="button" class=" btn btn-arrow-right crumb" id="cconfirm" disabled><i class="material-icons crumbi">check_circle</i><h3>Confirm</h3></button>
 	</div>
 
 	<!-- Add four different pages in the html, we will hide and show accordingly -->
@@ -203,39 +203,44 @@
 		<div class="friends-info-bar">
 			<p class="help">Select friends you want to request from. Hopefully, one of them will accept your request!<p>
 		</div>
-		<div class="wireframe friends-select container">
+		<div class="stroke friends-select container">
 			<div id="checkboxes">
-			  <ul>
-			    <li>
+			  <ul id="friends-ul">
+			    <li class="my-2 friend-listing">
 					<input type="checkbox" id="checkbox1" class="friend-check">
+					<i class="material-icons ifriend">mood</i>
 					<label for="checkbox1">
 						Michaelangelo
 						<span class="float-right">Next trip: in 3 hours</span>
 					</label>
 				</li>
-  			    <li>
+  			    <li class="my-2 friend-listing">
   					<input type="checkbox" id="checkbox2"  class="friend-check">
+  					<i class="material-icons ifriend">mood</i>
   					<label for="checkbox2">
 						Donatello
 						<span class="float-right">Next trip: in 7 days</span>
 					</label>
   				</li>
-  			    <li>
+  			    <li class="my-2 friend-listing">
   					<input type="checkbox" id="checkbox3" class="friend-check">
+  					<i class="material-icons ifriend">mood</i>
   					<label for="checkbox3">
 						Raphael
 						<span class="float-right" hidden>Next trip: in 3 hours</span>
 					</label>
   				</li>
-  			    <li>
+  			    <li class="my-2 friend-listing">
   					<input type="checkbox" id="checkbox4" class="friend-check">
+  					<i class="material-icons ifriend">mood</i>
   					<label for="checkbox4">
 						Davinci
 						<span class="float-right" hidden>Next trip: in 3 hours</span>
 					</label>
   				</li>
-  			    <li>
+  			    <li class="my-2 friend-listing">
   					<input type="checkbox" id="checkbox5" class="friend-check">
+  					<i class="material-icons ifriend">mood</i>
   					<label for="checkbox5">
 						Pierogi
 						<span class="float-right" hidden>Next trip: in 3 hours</span>
@@ -247,25 +252,25 @@
 	</div>
 	<div class="confirmation-page opage" hidden>
 		<div class="container">
-			<div class="row wireframe" id="confirm-section-titles">
-				<div class="col-4">
+			<div class="row stroke confirm-row" id="confirm-section-titles">
+				<div class="col-12 col-md-4 stroke">
 					<h4>Details</h4>
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-md-4 stroke">
 					<h4>Items</h4>
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-md-4 stroke">
 					<h4>Friends</h4>
 				</div>
 			</div>
-			<div class="row wireframe" id="confirm-section-details">
-				<div class="col-4 wireframe" id="confirm-section-details-details">
+			<div class="row stroke confirm-row" id="confirm-section-details">
+				<div class="col-12 col-md-4 stroke" id="confirm-section-details-details">
 					<div id="confirm-section-details-stores">
 						<h5>Stores</h5>
 					</div>
 					<div id="confirm-section-details-address">
 						<h5>Delivery address</h5>
-						<address class="wireframe default-address-box" id="confirm-address">
+						<address class="stroke default-address-box" id="confirm-address">
 							100 Lala Way <br>
 							Amayzin, HA 11111
 						</address>
@@ -276,7 +281,7 @@
 						<span id="confirm-section-details-deadline-none" hidden><strong>No specific deadlines!</strong></span>
 					</div>
 				</div>
-				<div class="col-4 wireframe" id="confirm-section-details-items">
+				<div class="col-12 col-md-4 stroke" id="confirm-section-details-items">
 					<ul id="confirm-section-details-items-list">
 		  			    <li>
 							Item name
@@ -295,7 +300,7 @@
 	    				</li>
 	  				</ul>
 				</div>
-				<div class="col-4 wireframe" id="confirm-section-details-friends">
+				<div class="col-12 col-md-4 stroke" id="confirm-section-details-friends">
 					<ul id="confirm-section-details-friends-list">
 		  			    <li>
 							Friend name
@@ -315,18 +320,18 @@
 	  				</ul>
 				</div>
 			</div>
-			<div class="row wireframe" id="confirm-section-edit-buttons">
-				<div class="col-4">
+			<div class="row" id="confirm-section-edit-buttons">
+				<div class="col-12 col-md-4 d-flex justify-content-center confirm-edit">
 					<button type="button" class="btn button-forest">Edit</button>
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-md-4 d-flex justify-content-center confirm-edit">
 					<button type="button" class="btn button-forest">Edit</button>
 				</div>
-				<div class="col-4">
+				<div class="col-12 col-md-4 d-flex justify-content-center confirm-edit">
 					<button type="button" class="btn button-forest">Edit</button>
 				</div>
 			</div>
-			<div class="row wireframe mt-2" id="confirm-extra-comments">
+			<div class="row mt-2" id="confirm-extra-comments">
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text">Extra comments</span>
@@ -344,7 +349,7 @@
   	<button type="button" class="btn btn-default button-white" id="nextbutton_detail" disabled><h3>Next &raquo;</h3></button>
 	<button type="button" class="btn btn-default button-white" id="nextbutton_items" hidden disabled><h3>Next &raquo;</h3></button>
 	<button type="button" class="btn btn-default button-white" id="nextbutton_friends" hidden disabled><h3>Next &raquo;</h3></button>
-	<button type="button" class="btn btn-default button-green" id="confirmrequest" disabled hidden><h3>Confirm Request</h3></button>
+	<button type="button" class="btn btn-default button-green" id="confirmrequest" hidden><h3>Confirm Request</h3></button>
 
   </footer>
 </body>

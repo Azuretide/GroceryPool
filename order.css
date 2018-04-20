@@ -32,11 +32,16 @@
 	margin-right: 15px;
 }
 
+.crumb-active {
+	background-color: #f6c123;
+}
+
 button:disabled,
 button[disabled] {
   background: lightgray !important;
   color: gray !important;
   cursor: not-allowed;
+  opacity: 1 !important;
 }
 
 h4 {
@@ -76,6 +81,7 @@ h4 {
 }
 .btn-arrow-right:after { /* align the "after" square to the right */
     right: -3.36vh;
+    background: inherit;
 }
 .btn-arrow-right:after { /* bring arrow pointers to front */
     z-index: 1;
@@ -155,7 +161,7 @@ h4 {
 
 /* Items Page */
 
-#item-input, #saved-items-ul {
+#item-input, #saved-items-ul, #friends-ul {
 	padding: 0px !important;
 }
 
@@ -180,12 +186,13 @@ h4 {
 }
 .friends-select {
 	height: 70%;
-	overflow-y: scroll;
+	width: 80% !important;
+	overflow-y: auto;
 }
 
 .friends-select li {
 	list-style-type: none;
-	border: thin dashed grey;
+	border: thin solid black;
 }
 
 .friends-select li label {
@@ -194,8 +201,22 @@ h4 {
 
 .help {
 	font-size: 16px;
+	font-weight: bold;
 }
 
+.friend-listing {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.ifriend {
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 24px !important;
+}
 
 /* Confirmation page */
 
@@ -209,6 +230,19 @@ h4 {
 
 #confirm-section-edit-buttons {
 	height: 10%;
+}
+
+#confirm-extra-comments {
+	margin-top: 15px !important;
+}
+
+.confirm-row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.confirm-edit {
+	margin-top: 8px !important;
 }
 
 /* Footer Styling */

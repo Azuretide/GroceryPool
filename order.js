@@ -208,6 +208,10 @@ Util.events(document, {
 				Util.one("#nextbutton_detail").hidden = true;
 				Util.one(".items-page").hidden = false;
 				Util.one("#nextbutton_items").hidden = false;
+
+				Util.one("#cinfo").classList.remove("crumb-active");
+				Util.one("#citems").classList.add("crumb-active");
+				Util.one("#citems").disabled = false;
 			}
 		});
 
@@ -217,6 +221,10 @@ Util.events(document, {
 				Util.one("#nextbutton_items").hidden = true;
 				Util.one(".friends-page").hidden = false;
 				Util.one("#nextbutton_friends").hidden = false;
+
+				Util.one("#citems").classList.remove("crumb-active");
+				Util.one("#cfriends").classList.add("crumb-active");
+				Util.one("#cfriends").disabled = false;
 			}
 		});
 
@@ -226,6 +234,11 @@ Util.events(document, {
 				Util.one("#nextbutton_friends").hidden = true;
 				Util.one(".confirmation-page").hidden = false;
 				Util.one("#confirmrequest").hidden = false;
+
+				Util.one("#cfriends").classList.remove("crumb-active");
+				Util.one("#cconfirm").classList.add("crumb-active");
+				Util.one("#cconfirm").disabled = false;
+
 				Util.one(".footer").style.justifyContent = "center";
 			}
 		});
