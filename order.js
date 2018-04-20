@@ -12,6 +12,7 @@ Util.events(document, {
 		Util.events(Util.one("#add-new-address"), {
 			"mousedown": function (evt) {
 				var newAddr = Util.one("#new-address-text").value;
+				Util.one("#new-address-text").value = "";
 				if(newAddr !== "") {
 					var wholeBox = Util.one("#new-address-form");
 					var nodeList = Array.from(wholeBox.childNodes);
@@ -178,6 +179,27 @@ Util.events(document, {
 				Util.one("#nextbutton_items").disabled = true;
 			}
 
+			var isFriendChecked = false;
+
+			while(Util.one("#confirm-section-details-friends-list").childNodes.length > 0) {
+				Util.one("#confirm-section-details-friends-list").removeChild(Util.one("#confirm-section-details-friends-list").childNodes[0]);
+			}
+
+			Util.all(".friend-check").forEach((check) => {
+				isFriendChecked = isFriendChecked || check.checked;
+				if(check.checked) {
+					var liItem = Util.create("li", {});
+					liItem.innerText = check.nextSibling.innerText || check.nextSibling.nextSibling.innerText;
+					Util.one("#confirm-section-details-friends-list").appendChild(liItem);
+				}
+			});
+
+			if(isFriendChecked === true) {
+				Util.one("#nextbutton_friends").disabled = false;
+			} else {
+				Util.one("#nextbutton_friends").disabled = true;
+			}
+
 		}, /* how often we validate */ 500);
 
 		Util.events(Util.one("#nextbutton_detail"), {
@@ -195,6 +217,15 @@ Util.events(document, {
 				Util.one("#nextbutton_items").hidden = true;
 				Util.one(".friends-page").hidden = false;
 				Util.one("#nextbutton_friends").hidden = false;
+			}
+		});
+
+		Util.events(Util.one("#nextbutton_friends"), {
+			"mousedown": (evt) => {
+				Util.one(".friends-page").hidden = true;
+				Util.one("#nextbutton_friends").hidden = true;
+				Util.one(".confirmation-page").hidden = false;
+				Util.one("#confirmrequest").hidden = false;
 			}
 		});
 	},
