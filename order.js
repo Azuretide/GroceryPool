@@ -203,7 +203,7 @@ Util.events(document, {
 				isFriendChecked = isFriendChecked || check.checked;
 				if(check.checked) {
 					var liItem = Util.create("li", {});
-					liItem.innerText = check.nextSibling.nextSibling.innerText;
+					liItem.innerText = check.nextSibling.nextSibling.nextSibling.nextSibling.innerText;
 					Util.one("#confirm-section-details-friends-list").appendChild(liItem);
 				}
 			});
