@@ -1,5 +1,7 @@
 /*Styling for all other pages*/
-
+html {
+  height: 100%;
+}
 
 /* Navbar Styling */
 
@@ -117,21 +119,15 @@ main h1 {
   color: white;
 }
 
+
+/*Button Styles*/
+
 .button-forest {
   background-color: #3b7029;
   color: white;
 }
 .button-forest:hover {
   background-color: #274a1c;
-  color: white;
-}
-
-.button-gold {
-  background-color: #f7be22;
-  color: black;
-}
-.button-gold:hover {
-  background-color: #dda508;
   color: white;
 }
 
@@ -148,6 +144,13 @@ main h1 {
   background: lightgray !important;
   color: gray !important;
   cursor: not-allowed !important;
+}
+
+
+/*Manage Requests Screens*/
+
+.infos {
+  margin-top: 12vh;
 }
 
 
