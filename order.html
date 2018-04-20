@@ -8,11 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Load style sheets -->
-	<link rel="stylesheet" href="order.css">
+	<link rel="stylesheet" type="text/css" href="order.css">
+	<link href="css/main.css" type="text/css" rel="stylesheet">
 	<!-- Load bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 
 	<!-- Load any supplemental Javascript libraries here -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/seedrandom.js"></script>
@@ -25,34 +25,55 @@
 
   	<script src="util.js"></script>
   	<script src="order.js"></script>
+  	<script src="js/main.js"></script>
 </head>
 
 <body>
+
   <header class="header">
-  	<!-- Header for grocerypool website -->
-	<a href="#"><h2 id="grocerypool">GroceryPool</h2></a>
-	<div id="navbar-right">
-		<h5 id="logininfo">Hi, Sarah</h5>
-		<div class="dropdown">
-		  <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-		    <i class="material-icons" style="font-size: 35px; color: white">menu</i>
-		  </button>
-		  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-		    <li>
-		    	<center id="sarah">
-		    		<i class="material-icons" style="font-size: 75px">mood</i>
-		    		Sarah
-		    	</center>
-		    </li>
-		    <li><a href="#">Profile</a></li>
-		    <li><a href="#">Manage Friends</a></li>
-		    <li><a href="#">Your Requests</a></li>
-		    <li><a href="#">Your Deliveries</a></li>
-		    <li><a href="#">Logout</a></li>
-		  </ul>
-		</div>
-	</div>
-  </header>
+    <div class="navbar navbar-dark box-shadow fixed-top green">
+        <div class="container" id="navbar-body">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <h3 id="grocerypool">GroceryPool</h3>
+            </a>
+            <div class="col-3 text-right" id="navbar-right">
+                <span class="text-white mr-3" id="logininfo">Hi, Sarah!</span>
+                <a href="#3" class="navbar-toggler pt-1 pb-2" onclick="toggleInfo()">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+
+                <div class="user_info_header">
+                    <div class="user_info_blk text-white">
+                        <div class="user_avatar text-center">
+                        	<i class="material-icons" style="font-size: 200px">mood</i>
+                        </div>
+                            <h5>Sarah</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#3">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Manage Friends</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Your Requests</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Your Deliveries</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ </header>
+
   <div class="wireframe content">
 	<div class="wireframe order-progress col-md">
 		<button type="button" class="btn btn-arrow-right crumb active" id="cinfo"><i class="material-icons crumbi">info</i><h3>Details</h3></button>

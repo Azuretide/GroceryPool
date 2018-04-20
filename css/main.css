@@ -6,7 +6,7 @@ main h1 {
 /* line 6, ../sass/main.sass */
 .user_info_header {
   width: 230px;
-  background: #4a5561;
+  background: #3b7029;
   position: absolute;
   top: 40px;
   right: 0;
@@ -19,7 +19,7 @@ main h1 {
 }
 /* line 17, ../sass/main.sass */
 .user_info_header .user_info_blk .user_avatar {
-  padding: 20px;
+  /*padding: 20px;*/
 }
 /* line 19, ../sass/main.sass */
 .user_info_header .user_info_blk .user_avatar img {
