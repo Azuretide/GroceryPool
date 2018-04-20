@@ -12,6 +12,7 @@ Util.events(document, {
 		Util.events(Util.one("#add-new-address"), {
 			"mousedown": function (evt) {
 				var newAddr = Util.one("#new-address-text").value;
+				Util.one("#new-address-text").value = "";
 				if(newAddr !== "") {
 					var wholeBox = Util.one("#new-address-form");
 					var nodeList = Array.from(wholeBox.childNodes);
@@ -195,6 +196,15 @@ Util.events(document, {
 				Util.one("#nextbutton_items").hidden = true;
 				Util.one(".friends-page").hidden = false;
 				Util.one("#nextbutton_friends").hidden = false;
+			}
+		});
+
+		Util.events(Util.one("#nextbutton_friends"), {
+			"mousedown": (evt) => {
+				Util.one(".friends-page").hidden = true;
+				Util.one("#nextbutton_friends").hidden = true;
+				Util.one(".confirmation-page").hidden = false;
+				Util.one("#confirmrequest").hidden = false;
 			}
 		});
 	},
