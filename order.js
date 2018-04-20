@@ -1,4 +1,5 @@
-
+// Create a dom variable so we don't update things too often
+var dom = {};
 
 // Attaching events on document because then we can do it without waiting for
 // the DOM to be ready (i.e. before DOMContentLoaded fires)
@@ -158,6 +159,19 @@ Util.events(document, {
 			var searchInput = Util.one("#search-bar").value;
 			var deadline = (Util.one("#deadline-to").value !== "") || Util.one("#no-deadline").checked;
 
+			if(Util.one("#confirm-section-details-stores-name").innerText != searchInput) {
+				Util.one("#confirm-section-details-stores-name").innerText = searchInput;
+			}
+
+			if(Util.one("#no-deadline").checked) {
+				Util.one("#deadline-to").disabled = true;
+				Util.one("#confirm-section-details-deadline-in").innerText = "No deadlines!";
+			} else {
+				Util.one("#deadline-to").disabled = false;
+				var dropdown = Util.one("#time-period");
+				Util.one("#confirm-section-details-deadline-in").innerText = "In about " + Util.one("#deadline-to").value + " " + dropdown.options[dropdown.selectedIndex].value;
+			}
+
 			if(searchInput !== "" && deadline) {
 				Util.one("#nextbutton_detail").disabled = false;
 			} else {
@@ -189,7 +203,7 @@ Util.events(document, {
 				isFriendChecked = isFriendChecked || check.checked;
 				if(check.checked) {
 					var liItem = Util.create("li", {});
-					liItem.innerText = check.nextSibling.innerText || check.nextSibling.nextSibling.innerText;
+					liItem.innerText = check.nextSibling.nextSibling.innerText;
 					Util.one("#confirm-section-details-friends-list").appendChild(liItem);
 				}
 			});
