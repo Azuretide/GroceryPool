@@ -49,7 +49,7 @@ Util.events(document, {
 		function saveButton (evt, save_button) {
 			var saveVal = save_button.parentElement.childNodes[1].value || save_button.parentElement.childNodes[0].value;
 			var newItem = Util.create("li", {
-				class: "saved-items",
+				class: "my-2 saved-items",
 			});
 			newItem.innerText = saveVal;
 			console.log(save_button.parentElement.childNodes[1]);
@@ -104,7 +104,7 @@ Util.events(document, {
 			});
 			var inputCell = Util.create("input", {
 				type: "text",
-				class: "col-6",
+				class: "col-10",
 			});
 			inputCell.value = text;
 			liItem.appendChild(inputCell);
@@ -226,6 +226,7 @@ Util.events(document, {
 				Util.one("#nextbutton_friends").hidden = true;
 				Util.one(".confirmation-page").hidden = false;
 				Util.one("#confirmrequest").hidden = false;
+				Util.one(".footer").style.justifyContent = "center";
 			}
 		});
 	},

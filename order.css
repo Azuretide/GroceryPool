@@ -6,7 +6,9 @@
 	border-color: skyblue;
 }
 
-
+.stroke {
+	border: thin solid black;
+}
 
 
 /* Breadcrumbs Styling */
@@ -100,11 +102,27 @@ h4 {
 
 .paging {
 	height: 69.5vh;
-	/*overflow-y: scroll;*/
+	overflow-y: auto;
 }
 
-.details-page {
+.opage {
 	height: 100%;
+	padding-top: 20px;
+}
+
+
+/* Details Page */
+
+#storesec {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+
+#storelabel {
+	margin-left: 55px;
 }
 
 .store-search-bar {
@@ -115,28 +133,49 @@ h4 {
 	height: 100%;
 }
 
+.icontain {
+	text-align: center;
+}
+
+#add-new-address {
+	margin-top: 10px;
+}
+
+#time-input {
+	display: flex;
+	flex-direction: column;
+}
+
+#timeor {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	text-align: center;
+	font-weight: bold;
+}
+
 /* Items Page */
 
-.items-page {
-	height: 100%;
+#item-input, #saved-items-ul {
+	padding: 0px !important;
 }
 
 .items-page ul {
 	list-style-type: none;
 }
 .items-page li {
-	border: thin dashed skyblue;
+	/*border: thin dashed skyblue;*/
+}
+
+.saved-items {
+	padding: 5px;
+	border: thin solid black;
 }
 
 
 /* Friends Page */
 
-.friends-page {
-	height: 100%;
-}
-
 .friends-info-bar {
-	height: 30%;
+	height: 20%;
 	text-align: center;
 }
 .friends-select {
@@ -153,10 +192,12 @@ h4 {
 	width: 90%;
 }
 
-/* Confirmation page */
-.confirmation-page {
-	height: 100%;
+.help {
+	font-size: 16px;
 }
+
+
+/* Confirmation page */
 
 #confirm-section-titles {
 	height: 20%;
