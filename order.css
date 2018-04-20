@@ -1,3 +1,4 @@
+/*Styling for the Order Page*/
 
 .wireframe {
 	border-width: thin;
@@ -5,49 +6,7 @@
 	border-color: skyblue;
 }
 
-.wireframe {
-	border-width: thin;
-	border-style: dashed;
-	border-color: skyblue;
-}
 
-/* Navbar Styling */
-
-#grocerypool {
-	margin-top: 5px !important;
-	color: white;
-}
-
-#logininfo {
-	margin: 12px !important;
-	color: white;
-}
-
-.header {
-	display: flex;
-	align-content: center;
-	justify-content: space-between;
-	height: 9vh;
-}
-
-.green {
-	background-color: #6bbf4e;
-	height: 9vh;
-}
-
-#navbar-body {
-	margin: 0px !important;
-	padding: 0px !important;
-	max-width: none;
-}
-
-#navbar-right {
-	padding: 0px !important;
-}
-
-#logininfo {
-	font-size: 18px;
-}
 
 
 /* Breadcrumbs Styling */
@@ -69,6 +28,13 @@
 .crumbi {
 	font-size: 35px !important;
 	margin-right: 15px;
+}
+
+button:disabled,
+button[disabled] {
+  background: lightgray !important;
+  color: gray !important;
+  cursor: not-allowed;
 }
 
 h4 {
@@ -133,7 +99,7 @@ h4 {
 }
 
 .paging {
-	height: 67vh;
+	height: 69.5vh;
 	overflow-y: scroll;
 }
 
