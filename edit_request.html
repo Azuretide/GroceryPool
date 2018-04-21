@@ -59,60 +59,61 @@
 
 <main class="edit_page infos">
     <div class="container">
-        <div class="row justify-content-center align-self-stretch mt-5">
-            <div class="col">
-                <div class="card p-3 h-100">
-                    <h3 class="mb-3 text-center">Details</h3>
-                    <form class="h-100 disabled">
-                        <fieldset disabled>
-                            <div class="form-group">
-                                <label>Store</label>
-                                <input type="text" class="form-control" value="Costco"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Delivery address</label>
-                                <input type="text" class="form-control" value="77 Mass"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Delivery time</label>
-                                <input type="text" class="form-control" value="Costco"/>
-                            </div>
-                        </fieldset>
-                        <center class="mt-3">
-                            <a href="#3" class="btn button-forest" onclick="toggleEdit(event)">Edit</a>
-                        </center>
-                    </form>
-                </div>
-
+        <div class="card-deck justify-content-center align-self-stretch mt-5">
+            <div class="card ">
+                <h4 class="mb-3 card-header">Details</h4>
+                <form class="disabled card-body">
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label><h5>Store</h5></label>
+                            <input type="text" class="form-control" value="Costco"/>
+                        </div>
+                        <div class="form-group">
+                            <label><h5>Delivery address</h5></label>
+                            <input type="text" class="form-control" value="77 Mass"/>
+                        </div>
+                        <div class="form-group">
+                            <label><h5>Delivery time</h5></label>
+                            <input type="text" class="form-control" value="In about 3 hours."/>
+                        </div>
+                    </fieldset>
+                </form>
+                <button href="#3" class="btn button-forest" onclick="toggleEdit(event)">Edit</button>
             </div>
-            <div class="col">
-                <div class="card p-3 h-100">
-                    <h3 class="mb-3 text-center">Shopping List</h3>
-                    <form class="h-100">
-                        <fieldset disabled>
-                            <div class="form-group">
-                                <label>Store</label>
-                                <textarea class="form-control">Ribeye Steak</textarea>
-                            </div>
-                        </fieldset>
-                        <center class="mt-3">
-                            <a href="#3" class="btn button-forest" onclick="toggleEdit(event)">Edit</a>
-                        </center>
-                    </form>
-                </div>
-
+            <div class="card">
+                <h4 class="mb-3 card-header">Items</h4>
+                <form class="card-body">
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label></label>
+                            <textarea class="form-control">7 lbs of Ribeye Steak</textarea>
+                        </div>
+                    </fieldset>
+                </form>
+                <button href="#3" class="btn button-forest" onclick="toggleEdit(event)">Edit</button>
             </div>
-            <div class="col">
-                <div class="card p-3 h-100">
-                    <h3 class="mb-3 text-center">Friends</h3>
-                    <form class="h-100">
-                        <center class="mt-3">
-                            <a href="#3" class="btn button-forest">Edit</a>
-                        </center>
-                    </form>
-                </div>
 
+            <div class="card">
+                <h4 class="mb-3 card-header">Friends</h4>
+                <div class="card-body">
+                    <ul id="confirm-section-details-friends-list">
+                        <li>
+                            Michaelangelo
+                        </li>
+                        <li>
+                            Donatello
+                        </li>
+                        <li>
+                            Davinci
+                        </li>
+                        <li>
+                            Raphael
+                        </li>
+                    </ul>
+                </div>
+                <button href="#3" class="btn button-forest" onclick="toggleEdit(event)">Edit</button>
             </div>
+
         </div>
 
         <div class="row justify-content-between mt-4 mb-5">
