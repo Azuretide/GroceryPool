@@ -275,6 +275,51 @@ Util.events(document, {
 				Util.one(".footer").style.justifyContent = "center";
 			}
 		});
+
+		// Helper function to hide all pages
+		function hideAllPages() {
+			Util.all(".opage").forEach((page) => {page.hidden = true;});
+		}
+
+		// Deactivate all crumbs 
+		function deactivateCrumbs() {
+			Util.all(".crumb").forEach((crumb) => {crumb.classList.remove("crumb-active");});
+		}
+
+		// Clicking on any crumb will hide all pages and deactivate all crumbs
+		// Then only the right crumb will be activated and right page shown
+		Util.all(".crumb").forEach((crumb) => {
+			Util.events(crumb , {
+				"mousedown": (evt) => {
+					hideAllPages();
+					deactivateCrumbs();	
+					crumb.classList.add("crumb-active");			
+				}
+			});
+		});
+
+		Util.events(Util.one("#cinfo"), {
+			"mousedown": (evt) => {
+				Util.one(".details-page").hidden = false;
+			}
+		});
+
+		Util.events(Util.one("#citems"), {
+			"mousedown": (evt) => {
+				Util.one(".items-page").hidden = false;
+			}
+		});
+		Util.events(Util.one("#cfriends"), {
+			"mousedown": (evt) => {
+				Util.one(".friends-page").hidden = false;
+			}
+		});
+
+		Util.events(Util.one("#cconfirm"), {
+			"mousedown": (evt) => {
+				Util.one(".confirmation-page").hidden = false;
+			}
+		});
 	},
 
 });
