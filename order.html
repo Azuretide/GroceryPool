@@ -87,7 +87,7 @@
 
 	<!-- Add four different pages in the html, we will hide and show accordingly -->
 	<div class="paging">
-	<div class="details-page opage" hidden>
+	<div class="details-page opage">
 		<div class="store-search-bar d-flex" id="storesec">
 			<h3 id="storelabel">Store</h3>
 			<div class="container search-bar-container">
@@ -102,8 +102,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="row delivery-details">
-				<div class="col">
+			<div class="row delivery-details card-deck">
 				<div class="card">
 					<h3 class="card-header">Delivery Address</h3>
 					<div class="row card-body">
@@ -128,8 +127,6 @@
 						</div>
 					</div>
 				</div>
-				</div>
-				<div class="col">
 				<div class="card">
 					<h3 class="card-header">Delivery Time</h3>
 					<div class="row card-body">
@@ -154,7 +151,6 @@
 						</div>
 					</div>
 				</div>
-				</div> 
 			</div>
 		</div>
 	</div>
@@ -214,117 +210,120 @@
 			<div id="checkboxes card-body">
 			  <ul id="friends-ul list-group">
 			    <li class="my-2 friend-listing list-group-item">
+			    	<label for="checkbox1">
 					<input type="checkbox" id="checkbox1" class="friend-check">
 					<i class="material-icons ifriend">mood</i>
-					<label for="checkbox1">Michaelangelo</label>
+					<span class="friend-name">Michaelangelo</span>
 					<span class="float-right next-trip text-muted">Next trip: in 3 hours</span>
+					</label>
 				</li>
   			    <li class="my-2 friend-listing list-group-item">
-  					<input type="checkbox" id="checkbox2"  class="friend-check">
-  					<i class="material-icons ifriend">mood</i>
-  					<label for="checkbox2">Donatello</label>
-					<span class="float-right next-trip text-muted">Next trip: in 7 days</span>
+  			    	<label for="checkbox2">
+	  					<input type="checkbox" id="checkbox2"  class="friend-check">
+	  					<i class="material-icons ifriend">mood</i>
+	  					<span class="friend-name">Donatello</span>
+						<span class="float-right next-trip text-muted">Next trip: in 7 days</span>
+					</label>
   				</li>
   			    <li class="my-2 friend-listing list-group-item">
-  					<input type="checkbox" id="checkbox3" class="friend-check">
-  					<i class="material-icons ifriend">mood</i>
-  					<label for="checkbox3">Raphael</label>
-					<span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+  					<label for="checkbox3">
+	  					<input type="checkbox" id="checkbox3" class="friend-check">
+	  					<i class="material-icons ifriend">mood</i>Raphael
+						<span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+					</label>
   				</li>
   			    <li class="my-2 friend-listing list-group-item">
-  					<input type="checkbox" id="checkbox4" class="friend-check">
-  					<i class="material-icons ifriend">mood</i>
-  					<label for="checkbox4">Davinci</label>
-					<span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+  					<label for="checkbox4">
+	  					<input type="checkbox" id="checkbox4" class="friend-check">
+	  					<i class="material-icons ifriend">mood</i>
+	  					<span class="friend-name">Davinci</span>
+						<span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+					</label>
   				</li>
   			    <li class="my-2 friend-listing list-group-item">
-  					<input type="checkbox" id="checkbox5" class="friend-check">
-  					<i class="material-icons ifriend">mood</i>
-  					<label for="checkbox5">Pierogi</label>
-					<span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+  					<label for="checkbox5">
+	  					<input type="checkbox" id="checkbox5" class="friend-check">
+	  					<i class="material-icons ifriend">mood</i>
+	  					<span class="friend-name">Pierogi</span>
+						<span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+					</label>
   				</li>
 			  </ul>
 			</div>
 		</div>
 	</div>
-	<div class="confirmation-page opage">
+	<div class="confirmation-page opage" hidden>
 		<div class="container">
-			<div class="row confirm-row" id="confirm-section-titles">
-				
-				<div class="col-12 col-md-4">
-					<div class="card">
-						<h4 class="card-header">Details</h4>
-						
-						<div class="card-body" id="confirm-section-details-details">
-							<div id="confirm-section-details-stores">
-								<h5>Stores</h5>
-								<span id="confirm-section-details-stores-name"></span>
-							</div>
-							<div id="confirm-section-details-address">
-								<h5>Delivery address</h5>
-								<address class="stroke default-address-box" id="confirm-address">
-									100 Lala Way <br>
-									Amayzin, HA 11111
-								</address>
-							</div>
-							<div id="confirm-section-details-deadline">
-								<h5>Deadline</h5>
-								<span id="confirm-section-details-deadline-in">In about <strong>3 minutes</strong>.</span>
-								<span id="confirm-section-details-deadline-none" hidden><strong>No specific deadlines!</strong></span>
-							</div>
+			<div class="row confirm-row card-deck" id="confirm-section-titles">
+			
+				<div class="card">
+					<h4 class="card-header">Details</h4>
+					
+					<div class="card-body" id="confirm-section-details-details">
+						<div id="confirm-section-details-stores">
+							<h5>Stores</h5>
+							<span id="confirm-section-details-stores-name"></span>
 						</div>
-						<button type="button" class="btn button-forest">Edit</button>
+						<div id="confirm-section-details-address">
+							<h5>Delivery address</h5>
+							<address class="stroke default-address-box" id="confirm-address">
+								100 Lala Way <br>
+								Amayzin, HA 11111
+							</address>
+						</div>
+						<div id="confirm-section-details-deadline">
+							<h5>Deadline</h5>
+							<span id="confirm-section-details-deadline-in">In about <strong>3 minutes</strong>.</span>
+							<span id="confirm-section-details-deadline-none" hidden><strong>No specific deadlines!</strong></span>
+						</div>
 					</div>
+					<button type="button" class="btn button-forest">Edit</button>
 				</div>
-				<div class="col-12 col-md-4">
-					<div class="card">
-						<h4 class="card-header">Items</h4>
-						<div class="card-body" id="confirm-section-details-items">
-							<ul id="confirm-section-details-items-list">
-				  			    <li>
-									Item name
-				  				</li>
-			    			    <li>
-									Item name
-			    				</li>
-			    			    <li>
-									Item name
-			    				</li>
-			    			    <li>
-									Item name
-			    				</li>
-			    			    <li>
-									Item name
-			    				</li>
-			  				</ul>
-						</div>
-						<button type="button" class="btn button-forest">Edit</button>
+				<div class="card">
+					<h4 class="card-header">Items</h4>
+					<div class="card-body" id="confirm-section-details-items">
+						<ul id="confirm-section-details-items-list">
+			  			    <li>
+								Item name
+			  				</li>
+		    			    <li>
+								Item name
+		    				</li>
+		    			    <li>
+								Item name
+		    				</li>
+		    			    <li>
+								Item name
+		    				</li>
+		    			    <li>
+								Item name
+		    				</li>
+		  				</ul>
 					</div>
+					<button type="button" class="btn button-forest">Edit</button>
 				</div>
-				<div class="col-12 col-md-4">
-					<div class="card">
-						<h4 class="card-header">Friends</h4>
-						<div class="card-body" id="confirm-section-details-friends">
-							<ul id="confirm-section-details-friends-list">
-				  			    <li>
-									Friend name
-				  				</li>
-			    			    <li>
-									Friend name
-			    				</li>
-			    			    <li>
-									Friend name
-			    				</li>
-			    			    <li>
-									Friend name
-			    				</li>
-			    			    <li>
-									Friend name
-			    				</li>
-			  				</ul>
-						</div>
-						<button type="button" class="btn button-forest">Edit</button>
+				<div class="card">
+					<h4 class="card-header">Friends</h4>
+					<div class="card-body" id="confirm-section-details-friends">
+						<ul id="confirm-section-details-friends-list">
+			  			    <li>
+								Friend name
+			  				</li>
+		    			    <li>
+								Friend name
+		    				</li>
+		    			    <li>
+								Friend name
+		    				</li>
+		    			    <li>
+								Friend name
+		    				</li>
+		    			    <li>
+								Friend name
+		    				</li>
+		  				</ul>
 					</div>
+					<button type="button" class="btn button-forest">Edit</button>
 				</div>
 			</div>
 			<div class="row mt-2" id="confirm-extra-comments">
