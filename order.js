@@ -18,7 +18,7 @@ Util.events(document, {
 					var wholeBox = Util.one("#new-address-form");
 					var nodeList = Array.from(wholeBox.childNodes);
 					var newNode = Util.create("address", {
-						class: "wireframe default-address-box col",
+						class: "default-address-box col",
 					});
 					nodeList.splice(
 						wholeBox.childNodes.length - 8,
@@ -29,13 +29,13 @@ Util.events(document, {
 							id: "new-address",
 							class: "col-1 mt-2",
 							checked: true,
+							value: newAddr,
 						}),
 						newNode,
 						Util.create("div", {
 							class: "w-100"
 						}),
 					);
-					console.log(nodeList);
 					while(wholeBox.childNodes.length > 0)
 						wholeBox.removeChild(wholeBox.childNodes[0]);
 					for(x in nodeList) {
@@ -50,10 +50,12 @@ Util.events(document, {
 		function saveButton (evt, save_button) {
 			var saveVal = save_button.parentElement.childNodes[1].value || save_button.parentElement.childNodes[0].value;
 			var newItem = Util.create("li", {
-				class: "my-2 saved-items",
+				class: "saved-items list-group-item",
 			});
-			newItem.innerText = saveVal;
-			console.log(save_button.parentElement.childNodes[1]);
+			var textSpan = Util.create("span", {
+				class: "saved-item-name",
+			});
+			textSpan.innerText = saveVal;
 			var link = Util.create("a", {
 					class: "float-right",
 					href: "#",
@@ -64,6 +66,7 @@ Util.events(document, {
 					addSavedItem(evt, saveVal);
 				}
 			});
+			newItem.appendChild(textSpan);
 			newItem.appendChild(link);
 			if(saveVal !== "") {
 				Util.one("#saved-items-ul").appendChild(newItem);
@@ -146,7 +149,7 @@ Util.events(document, {
 			}
 		}
 		Util.all(".add-item-link").forEach( (link) => {
-			var text = link.parentElement.innerText;
+			var text = link.previousSibling.previousSibling.innerText;
 			Util.events(link, {
 				"mousedown": function (evt) {
 					addSavedItem(evt, text);
@@ -180,12 +183,27 @@ Util.events(document, {
 			// Validate the items page
 
 			var flag_isThereContent = false;
+			var allItems = [];
 			Array.from(Util.one("#item-input").childNodes).forEach(function (node) {
 				if(node.nodeName === "li" || node.nodeName === "LI") {
-					if(node.childNodes[1].value !== "") {
+					if(node.childNodes[1].value !== "" && node.childNodes[1].value !== null && node.childNodes[1].value !== undefined) {
 						flag_isThereContent = true;
+						allItems.push(node.childNodes[1].value);
+					}
+
+					if(node.childNodes[0].value !== "" && node.childNodes[0].value !== null && node.childNodes[0].value !== undefined) {
+						flag_isThereContent = true;
+						allItems.push(node.childNodes[0].value);
 					}
 				}
+			});
+			while(Util.one("#confirm-section-details-items-list").childNodes.length > 0) {
+				Util.one("#confirm-section-details-items-list").removeChild(Util.one("#confirm-section-details-items-list").childNodes[0]);
+			}
+			allItems.forEach(function (text) {
+				var liItem = Util.create("li", {});
+				liItem.innerText = text;
+				Util.one("#confirm-section-details-items-list").appendChild(liItem);
 			});
 			if(flag_isThereContent === true) {
 				Util.one("#nextbutton_items").disabled = false;
@@ -202,7 +220,8 @@ Util.events(document, {
 			Util.all(".friend-check").forEach((check) => {
 				isFriendChecked = isFriendChecked || check.checked;
 				if(check.checked) {
-					var liItem = Util.create("li", {});
+					var liItem = Util.create("li", {
+					});
 					liItem.innerText = check.nextSibling.nextSibling.nextSibling.nextSibling.innerText;
 					Util.one("#confirm-section-details-friends-list").appendChild(liItem);
 				}
