@@ -18,7 +18,7 @@ Util.events(document, {
 					var wholeBox = Util.one("#new-address-form");
 					var nodeList = Array.from(wholeBox.childNodes);
 					var newNode = Util.create("address", {
-						class: "wireframe default-address-box col",
+						class: "default-address-box col",
 					});
 					nodeList.splice(
 						wholeBox.childNodes.length - 8,
