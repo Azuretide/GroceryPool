@@ -268,8 +268,12 @@ Util.events(document, {
 			Util.one("#nextbutton_detail").hidden = true;
 			Util.one("#nextbutton_items").hidden = true;
 			Util.one("#nextbutton_friends").hidden = true;
+			
+			Util.one("#prevbutton_items").hidden = true;
+			Util.one("#prevbutton_friends").hidden = true;
+			Util.one("#prevbutton_confirm").hidden = true;
+
 			Util.one("#confirmrequest").hidden = true;
-			Util.one(".footer").style.justifyContent = "flex-end";
 		}
 
 		// Clicking on any crumb will hide all pages and deactivate all crumbs
@@ -283,7 +287,7 @@ Util.events(document, {
 			});
 		});
 
-		["#cinfo", "#edit-details"].forEach((id) => {
+		["#cinfo", "#edit-details", "#prevbutton_items"].forEach((id) => {
 			Util.events(Util.one(id), {
 				"mousedown": (evt) => {
 					hideAllPages();
@@ -297,7 +301,7 @@ Util.events(document, {
 			});
 		});
 
-		["#citems", "#edit-items", "#nextbutton_detail"].forEach((id) => {
+		["#citems", "#edit-items", "#nextbutton_detail", "#prevbutton_friends"].forEach((id) => {
 			Util.events(Util.one(id), {
 				"mousedown": (evt) => {
 					hideAllPages();
@@ -307,11 +311,12 @@ Util.events(document, {
 
 					hideFooterButtons();
 					Util.one("#nextbutton_items").hidden = false;
+					Util.one("#prevbutton_items").hidden = false;
 				}
 			});
 		});
 
-		["#cfriends", "#edit-friends", "#nextbutton_items"].forEach((id) => {
+		["#cfriends", "#edit-friends", "#nextbutton_items", "#prevbutton_confirm"].forEach((id) => {
 			Util.events(Util.one(id), {
 				"mousedown": (evt) => {
 					hideAllPages();
@@ -321,6 +326,7 @@ Util.events(document, {
 
 					hideFooterButtons();
 					Util.one("#nextbutton_friends").hidden = false;
+					Util.one("#prevbutton_friends").hidden = false;
 				}
 			});
 		});
@@ -336,6 +342,7 @@ Util.events(document, {
 					hideFooterButtons();
 					Util.one(".footer").style.justifyContent = "center";
 					Util.one("#confirmrequest").hidden = false;
+					Util.one("#prevbutton_confirm").hidden = false;
 				}
 			});
 		});

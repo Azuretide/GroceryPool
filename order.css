@@ -250,13 +250,26 @@ h4 {
 /* Footer Styling */
 
 .footer {
-	display: flex;
-	justify-content: flex-end;
 	height: 12vh;
 	padding: 10px;
 	background-color: #6bbf4e;
 }
 
 #confirmrequest {
-	width: 40%;
+	width: 100%;
+}
+
+#prev-button-container {
+	display: flex;
+	justify-content: flex-start;
+}
+
+#next-button-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#confirm-button-container{
+	display: flex;
+	justify-content: center;
 }

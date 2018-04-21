@@ -344,18 +344,37 @@
 	</div>
   </div>
 	<footer class="footer">
-		<button type="button" class="float-right btn btn-default button-white" id="nextbutton_detail" disabled>
-			<h3>Next &raquo;</h3>
-		</button>
-		<button type="button" class="btn btn-default button-white" id="nextbutton_items" hidden disabled>
-			<h3>Next &raquo;</h3>
-		</button>
-		<button type="button" class="btn btn-default button-white" id="nextbutton_friends" hidden disabled>
-			<h3>Next &raquo;</h3>
-		</button>
-		<a href="confirmation.html" type="button" class="btn btn-default button-green" id="confirmrequest" hidden>
-			<h3>Confirm Request</h3>
-		</a>
+		<div class="container">
+			<div class="row">
+				<div class="col-6 col-md-3 d-flex">
+					<button type="button" class="float-left btn btn-default button-white" id="prevbutton_items" hidden>
+						<h3>&laquo; Back</h3>
+					</button>
+					<button type="button" class="float-left btn btn-default button-white" id="prevbutton_friends" hidden>
+						<h3>&laquo; Back</h3>
+					</button>
+					<button type="button" class="float-left btn btn-default button-white" id="prevbutton_confirm" hidden>
+						<h3>&laquo; Back</h3>
+					</button>
+				</div>
+				<div class="col-6 col-md-6" id="confirm-button-container">
+					<a href="confirmation.html" type="button" class="btn btn-default button-green" id="confirmrequest" hidden>
+						<h3>Confirm Request</h3>
+					</a>					
+				</div>
+				<div class="col-6 col-md-3 next-button-container">
+					<button type="button" class="float-right btn btn-default button-white" id="nextbutton_detail" disabled>
+						<h3>Next &raquo;</h3>
+					</button>
+					<button type="button" class="float-right btn btn-default button-white" id="nextbutton_items" hidden disabled>
+						<h3>Next &raquo;</h3>
+					</button>
+					<button type="button" class="float-right btn btn-default button-white" id="nextbutton_friends" hidden disabled>
+						<h3>Next &raquo;</h3>
+					</button>
+				</div>
+			</div>
+		</div>
 	</footer>
 </body>
 </html>
