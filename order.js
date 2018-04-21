@@ -29,13 +29,13 @@ Util.events(document, {
 							id: "new-address",
 							class: "col-1 mt-2",
 							checked: true,
+							value: newAddr,
 						}),
 						newNode,
 						Util.create("div", {
 							class: "w-100"
 						}),
 					);
-					console.log(nodeList);
 					while(wholeBox.childNodes.length > 0)
 						wholeBox.removeChild(wholeBox.childNodes[0]);
 					for(x in nodeList) {
