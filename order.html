@@ -282,7 +282,7 @@
 							<span id="confirm-section-details-deadline-none" hidden><strong>No specific deadlines!</strong></span>
 						</div>
 					</div>
-					<button type="button" class="btn button-forest">Edit</button>
+					<button type="button" class="btn button-forest" id="edit-details">Edit</button>
 				</div>
 				<div class="card">
 					<h4 class="card-header">Items</h4>
@@ -305,7 +305,7 @@
 		    				</li>
 		  				</ul>
 					</div>
-					<button type="button" class="btn button-forest">Edit</button>
+					<button type="button" class="btn button-forest" id="edit-items">Edit</button>
 				</div>
 				<div class="card">
 					<h4 class="card-header">Friends</h4>
@@ -328,7 +328,7 @@
 		    				</li>
 		  				</ul>
 					</div>
-					<button type="button" class="btn button-forest">Edit</button>
+					<button type="button" class="btn button-forest" id="edit-friends">Edit</button>
 				</div>
 			</div>
 			<div class="row mt-2" id="confirm-extra-comments">
@@ -342,15 +342,20 @@
 		</div>
 	</div>
 	</div>
-	<div></div>
-	<div></div>
   </div>
-  <footer class="footer">
-  	<button type="button" class="btn btn-default button-white" id="nextbutton_detail" disabled><h3>Next &raquo;</h3></button>
-	<button type="button" class="btn btn-default button-white" id="nextbutton_items" hidden disabled><h3>Next &raquo;</h3></button>
-	<button type="button" class="btn btn-default button-white" id="nextbutton_friends" hidden disabled><h3>Next &raquo;</h3></button>
-	<a href="confirmation.html" type="button" class="btn btn-default button-green" id="confirmrequest" hidden><h3>Confirm Request</h3></a>
-
-  </footer>
+	<footer class="footer">
+		<button type="button" class="float-right btn btn-default button-white" id="nextbutton_detail" disabled>
+			<h3>Next &raquo;</h3>
+		</button>
+		<button type="button" class="btn btn-default button-white" id="nextbutton_items" hidden disabled>
+			<h3>Next &raquo;</h3>
+		</button>
+		<button type="button" class="btn btn-default button-white" id="nextbutton_friends" hidden disabled>
+			<h3>Next &raquo;</h3>
+		</button>
+		<a href="confirmation.html" type="button" class="btn btn-default button-green" id="confirmrequest" hidden>
+			<h3>Confirm Request</h3>
+		</a>
+	</footer>
 </body>
 </html>

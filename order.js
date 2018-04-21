@@ -237,42 +237,19 @@ Util.events(document, {
 
 		Util.events(Util.one("#nextbutton_detail"), {
 			"mousedown": (evt) => {
-				Util.one(".details-page").hidden = true;
-				Util.one("#nextbutton_detail").hidden = true;
-				Util.one(".items-page").hidden = false;
-				Util.one("#nextbutton_items").hidden = false;
-
-				Util.one("#cinfo").classList.remove("crumb-active");
-				Util.one("#citems").classList.add("crumb-active");
 				Util.one("#citems").disabled = false;
 			}
 		});
 
 		Util.events(Util.one("#nextbutton_items"), {
 			"mousedown": (evt) => {
-				Util.one(".items-page").hidden = true;
-				Util.one("#nextbutton_items").hidden = true;
-				Util.one(".friends-page").hidden = false;
-				Util.one("#nextbutton_friends").hidden = false;
-
-				Util.one("#citems").classList.remove("crumb-active");
-				Util.one("#cfriends").classList.add("crumb-active");
 				Util.one("#cfriends").disabled = false;
 			}
 		});
 
 		Util.events(Util.one("#nextbutton_friends"), {
 			"mousedown": (evt) => {
-				Util.one(".friends-page").hidden = true;
-				Util.one("#nextbutton_friends").hidden = true;
-				Util.one(".confirmation-page").hidden = false;
-				Util.one("#confirmrequest").hidden = false;
-
-				Util.one("#cfriends").classList.remove("crumb-active");
-				Util.one("#cconfirm").classList.add("crumb-active");
 				Util.one("#cconfirm").disabled = false;
-
-				Util.one(".footer").style.justifyContent = "center";
 			}
 		});
 
@@ -286,39 +263,81 @@ Util.events(document, {
 			Util.all(".crumb").forEach((crumb) => {crumb.classList.remove("crumb-active");});
 		}
 
+		// Hide all footer buttons
+		function hideFooterButtons() {
+			Util.one("#nextbutton_detail").hidden = true;
+			Util.one("#nextbutton_items").hidden = true;
+			Util.one("#nextbutton_friends").hidden = true;
+			Util.one("#confirmrequest").hidden = true;
+			Util.one(".footer").style.justifyContent = "flex-end";
+		}
+
 		// Clicking on any crumb will hide all pages and deactivate all crumbs
 		// Then only the right crumb will be activated and right page shown
 		Util.all(".crumb").forEach((crumb) => {
 			Util.events(crumb , {
 				"mousedown": (evt) => {
 					hideAllPages();
-					deactivateCrumbs();	
-					crumb.classList.add("crumb-active");			
+					deactivateCrumbs();
 				}
 			});
 		});
 
-		Util.events(Util.one("#cinfo"), {
-			"mousedown": (evt) => {
-				Util.one(".details-page").hidden = false;
-			}
+		["#cinfo", "#edit-details"].forEach((id) => {
+			Util.events(Util.one(id), {
+				"mousedown": (evt) => {
+					hideAllPages();
+					deactivateCrumbs();
+					Util.one("#cinfo").classList.add("crumb-active");
+					Util.one(".details-page").hidden = false;
+
+					hideFooterButtons();
+					Util.one("#nextbutton_detail").hidden = false;
+				}
+			});
 		});
 
-		Util.events(Util.one("#citems"), {
-			"mousedown": (evt) => {
-				Util.one(".items-page").hidden = false;
-			}
-		});
-		Util.events(Util.one("#cfriends"), {
-			"mousedown": (evt) => {
-				Util.one(".friends-page").hidden = false;
-			}
+		["#citems", "#edit-items", "#nextbutton_detail"].forEach((id) => {
+			Util.events(Util.one(id), {
+				"mousedown": (evt) => {
+					hideAllPages();
+					deactivateCrumbs();
+					Util.one("#citems").classList.add("crumb-active");
+					Util.one(".items-page").hidden = false;
+
+					hideFooterButtons();
+					Util.one("#nextbutton_items").hidden = false;
+				}
+			});
 		});
 
-		Util.events(Util.one("#cconfirm"), {
-			"mousedown": (evt) => {
-				Util.one(".confirmation-page").hidden = false;
-			}
+		["#cfriends", "#edit-friends", "#nextbutton_items"].forEach((id) => {
+			Util.events(Util.one(id), {
+				"mousedown": (evt) => {
+					hideAllPages();
+					deactivateCrumbs();
+					Util.one("#cfriends").classList.add("crumb-active");
+					Util.one(".friends-page").hidden = false;
+
+					hideFooterButtons();
+					Util.one("#nextbutton_friends").hidden = false;
+				}
+			});
+		});
+
+		["#cconfirm", "#nextbutton_friends"].forEach((id) => {
+			Util.events(Util.one(id), {
+				"mousedown": (evt) => {
+					hideAllPages();
+					deactivateCrumbs();
+					Util.one("#cconfirm").classList.add("crumb-active");
+					Util.one(".confirmation-page").hidden = false;
+
+					hideFooterButtons();
+					Util.one(".footer").style.justifyContent = "center";
+					Util.one("#confirmrequest").hidden = false;
+				}
+			});
 		});
 	},
 
