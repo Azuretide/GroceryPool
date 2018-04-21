@@ -181,7 +181,6 @@ h4 {
 /* Friends Page */
 
 .friends-info-bar {
-	height: 20%;
 	text-align: center;
 }
 .friends-select {
@@ -200,8 +199,7 @@ h4 {
 }
 
 .help {
-	font-size: 16px;
-	font-weight: bold;
+	font-size: 1.5rem;
 }
 
 .friend-listing {
@@ -209,7 +207,7 @@ h4 {
 	justify-content: flex-start;
 	align-items: center;
 	padding: 5px;
-	font-size: 20px;
+	font-size: 1.2em;
 }
 
 .ifriend {
