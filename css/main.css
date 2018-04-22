@@ -4,11 +4,16 @@ html {
 }
 
 body {
-  font-family: trebuchet ms, sans-serif !important;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 h3 {
+  font-weight: bold !important;
   margin-bottom: 0px !important;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
 }
 
 /* Navbar Styling */
@@ -190,7 +195,7 @@ main h1 {
 #efooter-right {
   display:flex;
   justify-content: space-between;
-  width: 190px;
+  width: 200px;
 }
 
 /* line 49, ../sass/main.sass */
@@ -208,6 +213,12 @@ main h1 {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+#cancel-request {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Footer Styling */

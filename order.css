@@ -116,7 +116,7 @@ h4 {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 #storelabel {
@@ -206,15 +206,25 @@ h4 {
 	font-size: 1.2em;
 }
 
+.f-entry {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0px !important;
+}
+
+.f-front {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .ifriend {
 	margin-left: 5px;
 	margin-right: 5px;
-	font-size: 24px !important;
+	font-size: 50px !important;
 }
 
-.next-trip {
-	width: 20% !important;
-}
 
 /* Confirmation page */
 
