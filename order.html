@@ -92,14 +92,14 @@
 	<div class="details-page opage">
 		<div class="store-search-bar d-flex" id="storesec">
 			<div class="container search-bar-container">
-				<div class="row">
+				<div class="row justify-content-center">
 					<div class="col-12">
-						<h3>Store</h3>
+						<h3 id="store-label">Store</h3>
 					</div>
 					<div class="w-100"></div>
-					<div class="col-md-1 col-12 d-flex align-items-center justify-content-center">
+<!-- 					<div class="col-md-1 col-12 d-flex align-items-center justify-content-center">
 						<i class="material-icons" style="font-size: 45px">location_on</i>
-					</div>
+					</div> -->
 					<div class="col-md-10 col-12 input-group">
 					    <input type="text" class="form-control awesomplete" id="search-bar" placeholder="Search store..." data-list="Trader Joe's, Star Market (Shaw's), Costco, H-mart, 7/11, Safeway, Walmart">
 					</div>
@@ -277,7 +277,7 @@
 					<h4 class="card-header">Details</h4>
 					
 					<div class="card-body" id="confirm-section-details-details">
-						<div id="confirm-section-details-stores mb-1">
+						<div id="confirm-section-details-stores">
 							<h5>Stores</h5>
 							<span id="confirm-section-details-stores-name"></span>
 						</div>
@@ -359,29 +359,29 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-6 col-md-3 d-flex" id="prev-button-container">
-					<button type="button" class="float-left btn btn-default button-white foot-btn" id="prevbutton_items" hidden>
+					<button type="button" class="float-left btn btn-default button-forest foot-btn" id="prevbutton_items" hidden>
 						<h3>&laquo; Back</h3>
 					</button>
-					<button type="button" class="float-left btn btn-default button-white foot-btn" id="prevbutton_friends" hidden>
+					<button type="button" class="float-left btn btn-default button-forest foot-btn" id="prevbutton_friends" hidden>
 						<h3>&laquo; Back</h3>
 					</button>
-					<button type="button" class="float-left btn btn-default button-white foot-btn" id="prevbutton_confirm" hidden>
+					<button type="button" class="float-left btn btn-default button-forest foot-btn" id="prevbutton_confirm" hidden>
 						<h3>&laquo; Back</h3>
 					</button>
 				</div>
 				<div class="col-6 col-md-6" id="confirm-button-container">
-					<a href="confirmation.html" type="button" class="btn btn-default button-white foot-btn" id="confirmrequest" hidden>
+					<a href="confirmation.html" class="btn btn-default button-forest foot-btn" id="confirmrequest" hidden>
 						<h3>Confirm Request</h3>
 					</a>					
 				</div>
 				<div class="col-6 col-md-3 d-flex" id="next-button-container">
-					<button type="button" class="float-right btn btn-default button-white foot-btn" id="nextbutton_detail" disabled>
+					<button type="button" class="float-right btn btn-default button-forest foot-btn" id="nextbutton_detail" disabled>
 						<h3>Next &raquo;</h3>
 					</button>
-					<button type="button" class="float-right btn btn-default button-white foot-btn" id="nextbutton_items" hidden disabled>
+					<button type="button" class="float-right btn btn-default button-forest foot-btn" id="nextbutton_items" hidden disabled>
 						<h3>Next &raquo;</h3>
 					</button>
-					<button type="button" class="float-right btn btn-default button-white foot-btn" id="nextbutton_friends" hidden disabled>
+					<button type="button" class="float-right btn btn-default button-forest foot-btn" id="nextbutton_friends" hidden disabled>
 						<h3>Next &raquo;</h3>
 					</button>
 				</div>

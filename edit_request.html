@@ -62,10 +62,21 @@
 
 <main class="edit_page infos">
     <div class="container">
-        <div class="card-deck justify-content-center align-self-stretch mt-5">
+        <div class="row justify-content-between align-items-center mx-0 my-5" id="edit-request-header">
+                <div class="col-6 col-md-3 d-flex" id="triple-header-left">
+                    <a href="my_requests.html" class="btn button-forest">&laquo; Back</a>
+                </div>
+                <div class="col-6 col-md-6">
+                    <h3 style="text-align: center">Edit Request</h3>                  
+                </div>
+                <div class="col-6 col-md-3" id="triple-header-right">
+                </div>
+        </div>
+
+        <div class="card-deck justify-content-center align-self-stretch mt-5" id="edit-request-body">
             <div class="card ">
-                <h4 class="mb-3 card-header">Details</h4>
-                <form class="disabled card-body">
+                <h4 class="card-header">Details</h4>
+                <form class="disabled card-body edit-body">
                     <fieldset disabled>
                         <div class="form-group">
                             <label><h5>Store</h5></label>
@@ -75,7 +86,7 @@
                             <label><h5>Delivery address</h5></label>
                             <input type="text" class="form-control" value="77 Mass"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" id="edit-details-bottom">
                             <label><h5>Delivery time</h5></label>
                             <input type="text" class="form-control" value="In about 3 hours."/>
                         </div>
@@ -84,8 +95,8 @@
                 <button href="#3" class="btn button-forest" onclick="toggleEdit(event)">Edit</button>
             </div>
             <div class="card">
-                <h4 class="mb-3 card-header">Items</h4>
-                <form class="card-body">
+                <h4 class="card-header">Items</h4>
+                <form class="card-body edit-body">
                     <fieldset disabled>
                         <div class="form-group">
                             <label></label>
@@ -97,8 +108,8 @@
             </div>
 
             <div class="card">
-                <h4 class="mb-3 card-header">Friends</h4>
-                <div class="card-body">
+                <h4 class="card-header">Friends</h4>
+                <div class="card-body edit-body">
                     <ul id="confirm-section-details-friends-list">
                         <li>
                             Michaelangelo
@@ -130,10 +141,7 @@
                 Cancel Request
             </a>
         </div>
-        <div id="efooter-right">
-            <a href="my_requests.html" class="btn btn-lg button-forest">Back</a>
-            <a href="#3" class="btn btn-lg button-forest">Confirm</a>
-        </div>
+        <a href="#3" class="btn btn-lg button-forest">Confirm</a>
     </div>
     </div>
 </footer>

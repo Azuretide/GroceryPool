@@ -105,6 +105,7 @@ h4 {
 .opage {
 	height: 71vh;
 	padding-top: 20px;
+	padding-bottom: 20px;
 	overflow-y: auto;
 }
 
@@ -119,8 +120,9 @@ h4 {
 	margin-bottom: 10px;
 }
 
-#storelabel {
-	margin-left: 55px;
+#store-label {
+	text-align: center;
+	margin-bottom: 10px !important;
 }
 
 .store-search-bar {
@@ -228,12 +230,25 @@ h4 {
 
 /* Confirmation page */
 
+.confirmation-page {
+	font-size: 14px;
+	overflow-y: hidden;
+}
+
 #confirm-section-titles {
 	height: 20%;
 }
 
 #confirm-section-details {
 	height: 40vh;
+}
+
+#confirm-section-details-stores, #confirm-section-details-address {
+	margin-bottom: 8px !important;
+}
+
+#confirm-address {
+	margin-bottom: 0px !important;
 }
 
 #confirm-section-edit-buttons {
