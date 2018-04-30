@@ -72,13 +72,24 @@ Util.events(document, {
 						class: "float-right",
 						href: "#",
 					});
-				link.innerText = "+ Add item";
+				link.innerText = "+ add to cart";
 				Util.events(link, {
 					"mousedown": function(evt) {
 						addSavedItem(evt, saveVal);
 					}
 				});
 				newItem.appendChild(textSpan);
+				newItem.appendChild(link);
+				var link = Util.create("a", {
+						class: "float-right mr-2",
+						href: "#",
+					});
+				link.innerText = "x delete ";
+				Util.events(link, {
+					"mousedown": function(evt) {
+						deleteItem(evt);
+					}
+				});
 				newItem.appendChild(link);
 				if(saveVal !== "") {
 					Util.one("#saved-items-ul").appendChild(newItem);
@@ -137,7 +148,6 @@ Util.events(document, {
 			var allNodes = [];
 			var flag = false;
 			var addFlag = false;
-			console.log(item_input);
 			Array.from(Util.one("#item-input").childNodes).forEach(function (node) {
 				if(node.nodeName === "li" || node.nodeName === "LI") {
 					if(node.childNodes[1].value !== "") {
@@ -150,11 +160,9 @@ Util.events(document, {
 						}
 						allNodes.push(node);
 					}
-					console.log(addFlag);
 				}
 			});
 			if((text === "") && (addFlag === false)) {
-				console.log("hi", flag);
 				allNodes.push(liItem);
 			}
 			while(item_input.childNodes.length > 0)
@@ -163,6 +171,12 @@ Util.events(document, {
 				item_input.appendChild(allNodes[x]);
 			}
 		}
+
+		// Function to delete item from saved list
+		function deleteItem(evt) {
+			evt.target.parentElement.remove();
+		}
+
 		Util.all(".add-item-link").forEach( (link) => {
 			var text = link.previousSibling.previousSibling.innerText;
 			Util.events(link, {
@@ -171,6 +185,14 @@ Util.events(document, {
 						console.log(text);
 						addSavedItem(evt, text);
 					}
+				}
+			})
+		});
+
+		Util.all(".delete-item-link").forEach( (link) => {
+			Util.events(link, {
+				"mousedown": function (evt) {
+					deleteItem(evt);
 				}
 			})
 		});
