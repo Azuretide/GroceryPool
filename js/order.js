@@ -60,27 +60,31 @@ Util.events(document, {
 
 		function saveButton (evt, save_button) {
 			var saveVal = save_button.parentElement.childNodes[1].value || save_button.parentElement.childNodes[0].value;
-			var newItem = Util.create("li", {
-				class: "saved-items list-group-item",
-			});
-			var textSpan = Util.create("span", {
-				class: "saved-item-name",
-			});
-			textSpan.innerText = saveVal;
-			var link = Util.create("a", {
-					class: "float-right",
-					href: "#",
+			if(saveVal) {
+				var newItem = Util.create("li", {
+					class: "saved-items list-group-item",
 				});
-			link.innerText = "+ Add item";
-			Util.events(link, {
-				"mousedown": function(evt) {
-					addSavedItem(evt, saveVal);
+				var textSpan = Util.create("span", {
+					class: "saved-item-name",
+				});
+				textSpan.innerText = saveVal;
+				var link = Util.create("a", {
+						class: "float-right",
+						href: "#",
+					});
+				link.innerText = "+ Add item";
+				Util.events(link, {
+					"mousedown": function(evt) {
+						addSavedItem(evt, saveVal);
+					}
+				});
+				newItem.appendChild(textSpan);
+				newItem.appendChild(link);
+				if(saveVal !== "") {
+					Util.one("#saved-items-ul").appendChild(newItem);
 				}
-			});
-			newItem.appendChild(textSpan);
-			newItem.appendChild(link);
-			if(saveVal !== "") {
-				Util.one("#saved-items-ul").appendChild(newItem);
+			} else {
+				// Don't save undefined values
 			}
 		}
 
@@ -163,7 +167,10 @@ Util.events(document, {
 			var text = link.previousSibling.previousSibling.innerText;
 			Util.events(link, {
 				"mousedown": function (evt) {
-					addSavedItem(evt, text);
+					if(text) {
+						console.log(text);
+						addSavedItem(evt, text);
+					}
 				}
 			})
 		});
