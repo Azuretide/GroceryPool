@@ -340,7 +340,6 @@ Util.events(document, {
 					Util.one(".confirmation-page").hidden = false;
 
 					hideFooterButtons();
-					Util.one(".footer").style.justifyContent = "center";
 					Util.one("#confirmrequest").hidden = false;
 					Util.one("#prevbutton_confirm").hidden = false;
 				}
