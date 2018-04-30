@@ -9,6 +9,17 @@ Util.events(document, {
 	"DOMContentLoaded": function() {
 		// Setup tasks
 
+		// Make accidental navigation away unlikely
+		Util.all(".real-link").forEach((e) => {
+			Util.events(e, {
+				"click": function (evt) {
+					evt.preventDefault();
+					if(window.confirm("Your request hasn't been saved. Are you sure you want to leave?")) {
+						window.location.replace(e.href);
+					}
+				}
+			});
+		});
 
 		Util.events(Util.one("#add-new-address"), {
 			"mousedown": function (evt) {
