@@ -1,4 +1,15 @@
 /*Styling for all other pages*/
+
+/* Global Variables */
+:root {
+  --main-color: #2db92d; /*Main Interface Color*/
+  --main-color-dark: #196719; /*Button Color*/
+  --main-color-dark-hover: #145214; /*Button Color on hover*/
+  --progress-color: #d6f5d6; /*Color of inactive chevrons*/
+  --accent-color: #f1d85b; /*Secondary Interface Color*/
+  --accent-color-hover: #ebc714; /*Secondary Color on hover*/
+}
+
 html {
   height: 100%;
 }
@@ -38,9 +49,9 @@ input[type=checkbox] {
 }
 
 .green {
-  background-color: #2db92d;
+  background-color: var(--main-color);
   height: 9vh;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid var(--main-color-dark);
 }
 
 #navbar-body {
@@ -65,7 +76,7 @@ main h1 {
 /* line 6, ../sass/main.sass */
 .user_info_header {
   width: 230px;
-  background: #3b7029;
+  background: var(--main-color-dark);
   position: absolute;
   top: 40px;
   right: 0;
@@ -135,7 +146,7 @@ main h1 {
 }
 
 .form {
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.9);
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -143,37 +154,24 @@ main h1 {
   padding-top: 30px;
 }
 
-#req-button {
-  width: 50% !important;
-}
-
 
 /*Button Styles*/
 
 .button-forest {
-  background-color: green;
+  background-color: var(--main-color-dark);
   color: white;
 }
 .button-forest:hover {
-  background-color: #274a1c;
+  background-color: var(--main-color-dark-hover);
   color: white;
 }
 
-.button-white {
-  background-color: white;
-  color: #3b7029;
-}
-.button-white:hover {
-  background-color: #fceab6;
-  color: #3b7029;
-}
-
 .button-yellow {
-  background-color: #f1d85b;
+  background-color: var(--accent-color);
   color: black;
 }
 .button-yellow:hover {
-  background-color: #ebc714;
+  background-color: var(--accent-color-hover);
   color: black;
 }
 
@@ -210,6 +208,7 @@ main h1 {
 
 #edit-request-body {
   margin-top: 0px !important;
+  height: 65vh;
 }
 
 #efooter-body {
@@ -250,17 +249,24 @@ main h1 {
   justify-content: space-between;
 }
 
+.status-requested {
+  border: 1px solid var(--accent-color-hover) !important;
+}
+
+.status-accepted {
+  border: 1px solid var(--main-color-dark) !important;
+}
+
 
 /* Footer Styling */
 .footer {
   display: flex;
   padding: 10px;
-  /*background-color: #6bbf4e;*/
   position:fixed;
   left:0px;
   bottom:0px;
   width: 100%;
-  border-top: 1px solid green;
+  border-top: 1px solid var(--main-color-dark);
 }
 
 #foot-btn {

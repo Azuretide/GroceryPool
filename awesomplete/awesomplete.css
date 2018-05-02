@@ -80,7 +80,7 @@
 	}
 
 	.awesomplete > ul > li:hover {
-		background: hsl(200, 40%, 80%);
+		background: var(--progress-color);
 		color: black;
 	}
 
@@ -90,11 +90,11 @@
 	}
 
 		.awesomplete mark {
-			background: hsl(65, 100%, 50%);
+			background: var(--accent-color);
 		}
 
 		.awesomplete li:hover mark {
-			background: hsl(68, 100%, 41%);
+			background: var(--accent-color-hover);
 		}
 
 		.awesomplete li[aria-selected="true"] mark {

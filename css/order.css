@@ -1,15 +1,5 @@
 /*Styling for the Order Page*/
 
-.wireframe {
-	border-width: thin;
-	border-style: dashed;
-	border-color: skyblue;
-}
-
-.stroke {
-	border: thin solid black;
-}
-
 
 /* Breadcrumbs Styling */
 
@@ -23,7 +13,7 @@
 	display: flex !important;
 	justify-content: center;
 	align-items: center;
-	background-color: #d6f5d6;
+	background-color: var(--progress-color);
 	flex-grow: 1;
 }
 
@@ -33,7 +23,7 @@
 }
 
 .crumb-active {
-	background-color: #f1d85b;
+	background-color: var(--accent-color);
 }
 
 button:disabled,
@@ -174,6 +164,12 @@ h4 {
 
 .input-group-text {
 	cursor: pointer;
+}
+
+.input-group-text:hover {
+	background-color: var(--progress-color);
+	color: var(--main-color-dark);
+	border: 1px solid var(--main-color) !important;
 }
 
 
