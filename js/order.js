@@ -1,6 +1,8 @@
 // Create a dom variable so we don't update things too often
 var dom = {};
 
+var latestItems = [];
+
 // Attaching events on document because then we can do it without waiting for
 // the DOM to be ready (i.e. before DOMContentLoaded fires)
 Util.events(document, {
@@ -245,6 +247,7 @@ Util.events(document, {
 				liItem.innerText = text;
 				Util.one("#confirm-section-details-items-list").appendChild(liItem);
 			});
+			latestItems = allItems;
 			if(flag_isThereContent === true) {
 				Util.one("#nextbutton_items").disabled = false;
 			} else {
@@ -292,6 +295,7 @@ Util.events(document, {
 				Util.one("#cconfirm").disabled = false;
 			}
 		});
+
 
 		// Helper function to hide all pages
 		function hideAllPages() {
@@ -382,6 +386,24 @@ Util.events(document, {
 					hideFooterButtons();
 					Util.one("#confirmrequest").hidden = false;
 					Util.one("#prevbutton_confirm").hidden = false;
+
+					// Confirm Request Button: Saves order details to local storage
+					Util.one('#confirmrequest').addEventListener('click', (evt) => {
+						// Details
+						localStorage.setItem('store', Util.one("#confirm-section-details-stores-name").innerText);
+						localStorage.setItem('address', Util.one("#confirm-address").innerText);
+						localStorage.setItem('time', Util.one("#confirm-section-details-deadline-in").innerText);
+
+						// Items
+						localStorage.setItem('items', latestItems);
+
+						// Friends
+						var friendsList = [];
+						Array.from(Util.one("#confirm-section-details-friends-list").children).forEach((f) => {
+							friendsList.push(f.innerText);
+						});
+						localStorage.setItem('friends', friendsList);
+					});
 				}
 			});
 		});

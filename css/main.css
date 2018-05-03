@@ -239,8 +239,24 @@ main h1 {
   right: 0;
 }
 
+#er-items {
+  height: 40vh;
+}
+
 #edit-details-bottom {
   margin-bottom: 0px !important;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.no-margin {
+  margin: 0px !important;
+}
+
+.edit-req-li {
+  padding-left: 8px;
 }
 
 #cancel-request {
