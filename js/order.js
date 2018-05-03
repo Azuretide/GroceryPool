@@ -71,10 +71,10 @@ Util.events(document, {
 				});
 				textSpan.innerText = saveVal;
 				var link = Util.create("a", {
-						class: "float-right",
+						class: "float-right add-item-link",
 						href: "#",
 					});
-				link.innerText = "+ add to cart";
+				link.innerText = "+ add";
 				Util.events(link, {
 					"mousedown": function(evt) {
 						addSavedItem(evt, saveVal);
@@ -83,7 +83,7 @@ Util.events(document, {
 				newItem.appendChild(textSpan);
 				newItem.appendChild(link);
 				var link = Util.create("a", {
-						class: "float-right mr-2",
+						class: "float-right mr-2 delete-item-link",
 						href: "#",
 					});
 				link.innerText = "x delete ";
@@ -173,6 +173,41 @@ Util.events(document, {
 				item_input.appendChild(allNodes[x]);
 			}
 		}
+
+		// On clicking add new, create a new cell with empty text
+		Util.events(Util.one("#add-another-item"), {
+			"click": (evt) => {
+				var saveIcon = Util.create("i", {
+					class: "material-icons",
+				});
+				saveIcon.innerText = "save";
+
+				var div1 = Util.create("div", {
+					class: "input-group-text",
+				});
+				div1.appendChild(saveIcon);
+				var div2 = Util.create("div", {
+					class: "input-group-append",
+				});
+				div2.appendChild(div1);
+				var liItem = Util.create("li", {
+					class: "my-2 input-group",
+				});
+				var inputCell = Util.create("input", {
+					type: "text",
+					class: "col-10 item-input form-control",
+				});
+				inputCell.value = "";
+				liItem.appendChild(inputCell);
+				liItem.appendChild(div2);
+				Util.events(div2, {
+					"mousedown": (evt) => {
+						saveButton(evt, div2);
+					},
+				})
+				Util.one("#item-input").appendChild(liItem);
+			}
+		});
 
 		// Function to delete item from saved list
 		function deleteItem(evt) {
