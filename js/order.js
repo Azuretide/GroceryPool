@@ -136,7 +136,7 @@ Util.events(document, {
 			});
 			var inputCell = Util.create("input", {
 				type: "text",
-				class: "col-10",
+				class: "col-10 item-input form-control",
 			});
 			inputCell.value = text;
 			liItem.appendChild(inputCell);
@@ -202,7 +202,7 @@ Util.events(document, {
 		//  Regular input evaluation
 		window.setInterval(function() {
 			var searchInput = Util.one("#search-bar").value;
-			var deadline = (Util.one("#deadline-to").value !== "") || Util.one("#no-deadline").checked;
+			var deadline = (!isNaN(Util.one("#deadline-to").value) && Util.one("#deadline-to").value !== "") || Util.one("#no-deadline").checked;
 
 			if(Util.one("#confirm-section-details-stores-name").innerText != searchInput) {
 				Util.one("#confirm-section-details-stores-name").innerText = searchInput;
@@ -356,6 +356,11 @@ Util.events(document, {
 					hideFooterButtons();
 					Util.one("#nextbutton_items").hidden = false;
 					Util.one("#prevbutton_items").hidden = false;
+
+					// Hack to fix the red outline when we intially enter the page
+					Util.all(".item-input").forEach((elt) => {
+						elt.classList.remove("is-invalid");
+					});
 				}
 			});
 		});
@@ -371,6 +376,11 @@ Util.events(document, {
 					hideFooterButtons();
 					Util.one("#nextbutton_friends").hidden = false;
 					Util.one("#prevbutton_friends").hidden = false;
+
+					// Hack to not initially show the validation thing
+					Util.all(".friend-check").forEach((elt) => {
+						elt.classList.remove("is-invalid");
+					});
 				}
 			});
 		});
@@ -406,6 +416,88 @@ Util.events(document, {
 					});
 				}
 			});
+		});
+
+		Util.events(Util.one("#next-button-container"), {
+			"mouseenter": (evt) => {
+				setTimeout(() => {
+					var searchInput = Util.one("#search-bar").value;
+					var deadline = (!isNaN(Util.one("#deadline-to").value) && Util.one("#deadline-to").value !== "") || Util.one("#no-deadline").checked;
+					if(searchInput === "") {
+						Util.one("#search-bar").classList.add("is-invalid");
+					}
+					if(isNaN(Util.one("#deadline-to").value) || !(deadline) ) {
+						Util.one("#deadline-to").classList.add("is-invalid");
+					}
+
+					// Validate items page
+					var flag_isThereContent = false;
+					var allItems = [];
+					Array.from(Util.one("#item-input").childNodes).forEach(function (node) {
+						if(node.nodeName === "li" || node.nodeName === "LI") {
+							if(node.childNodes[1].value !== "" && node.childNodes[1].value !== null && node.childNodes[1].value !== undefined) {
+								flag_isThereContent = true;
+								allItems.push(node.childNodes[1].value);
+							}
+
+							if(node.childNodes[0].value !== "" && node.childNodes[0].value !== null && node.childNodes[0].value !== undefined) {
+								flag_isThereContent = true;
+								allItems.push(node.childNodes[0].value);
+							}
+						}
+					});
+					while(Util.one("#confirm-section-details-items-list").childNodes.length > 0) {
+						Util.one("#confirm-section-details-items-list").removeChild(Util.one("#confirm-section-details-items-list").childNodes[0]);
+					}
+					allItems.forEach(function (text) {
+						var liItem = Util.create("li", {});
+						liItem.innerText = text;
+						Util.one("#confirm-section-details-items-list").appendChild(liItem);
+					});
+					latestItems = allItems;
+					if(flag_isThereContent === false) {
+						Util.all(".item-input").forEach((elt) => {
+							elt.classList.add("is-invalid");
+						});
+					}
+
+					var isFriendChecked = false;
+
+					while(Util.one("#confirm-section-details-friends-list").childNodes.length > 0) {
+						Util.one("#confirm-section-details-friends-list").removeChild(Util.one("#confirm-section-details-friends-list").childNodes[0]);
+					}
+
+					Util.all(".friend-check").forEach((check) => {
+						isFriendChecked = isFriendChecked || check.checked;
+						if(check.checked) {
+							var liItem = Util.create("li", {
+							});
+							liItem.innerText = check.nextSibling.nextSibling.nextSibling.nextSibling.innerText;
+							Util.one("#confirm-section-details-friends-list").appendChild(liItem);
+						}
+					});
+
+					if(isFriendChecked === false) {
+						Util.all(".friend-check").forEach((elt) => {
+							elt.classList.add("is-invalid");
+						});
+					}
+				}, 200);
+			},
+			"mouseleave": (evt) => {
+				setTimeout(() => {
+					var searchInput = Util.one("#search-bar").value;
+					var deadline = (Util.one("#deadline-to").value !== "") || Util.one("#no-deadline").checked;
+					Util.one("#search-bar").classList.remove("is-invalid");
+					Util.one("#deadline-to").classList.remove("is-invalid");
+					Util.all(".item-input").forEach((elt) => {
+						elt.classList.remove("is-invalid");
+					});
+					Util.all(".friend-check").forEach((elt) => {
+						elt.classList.remove("is-invalid");
+					});
+				}, 500);
+			}
 		});
 	},
 

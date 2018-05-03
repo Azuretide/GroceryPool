@@ -172,6 +172,9 @@ h4 {
 	border: 1px solid var(--main-color) !important;
 }
 
+.delete-item-link {
+	color: var(--danger);
+}
 
 /* Friends Page */
 
@@ -223,7 +226,6 @@ h4 {
 	margin-right: 5px;
 	font-size: 50px !important;
 }
-
 
 /* Confirmation page */
 
