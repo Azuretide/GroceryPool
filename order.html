@@ -27,6 +27,19 @@
     <!-- Constructible EventTarget polyfill — Only Chrome 64+ supports constructible EventTarget objects natively -->
     <script src="https://unpkg.com/event-target@latest/min.js"></script>
 
+    <!--Select2 Fields-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.stores-select').select2({
+                placeholder: "Select a store",
+                allowClear: false
+            });
+        });
+    </script>
+
+
     <script src="js/util.js"></script>
     <script src="js/order.js"></script>
     <script src="js/main.js"></script>
@@ -88,6 +101,7 @@
 
     <!-- Add four different pages in the html, we will hide and show accordingly -->
     <div class="paging">
+
     <div class="details-page opage">
         <div class="store-search-bar d-flex" id="storesec">
             <div class="container search-bar-container">
@@ -96,15 +110,25 @@
                         <h3 id="store-label">Store</h3>
                     </div>
                     <div class="w-100"></div>
-                    <div class="col-md-10 col-12 input-group">
-                        <input type="text" class="form-control awesomplete" id="search-bar" placeholder="Search store..." data-list="Trader Joe's, Star Market (Shaw's), Costco, H-mart, 7/11, Safeway, Walmart">
+                    <div class="col-md-10 col-12">
+                        <select class="form-control stores-select w-100" id="search-bar" name="Stores" multiple>
+                            <option value="Trader Joe's">Trader Joe's</option>
+                            <option value="Star Market (Shaw's)">Star Market (Shaw's)</option>
+                            <option value="Costco">Costco</option>
+                            <option value="H-mart">H-mart</option>
+                            <option value="7/11">7/11</option>
+                            <option value="Safeway">Safeway</option>
+                            <option value="Walmart">Walmart</option>
+                        </select>
+                        <!--<input type="text" class="form-control awesomplete" id="search-bar" placeholder="Search store..." data-list="Trader Joe's, Star Market (Shaw's), Costco, H-mart, 7/11, Safeway, Walmart">-->
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="row delivery-details card-deck">
-                <div class="card">
+            <div class="row delivery-details">
+                <div class="col-12 col-lg-6 mb-3">
+                    <div class="card mx-0" style="height: 100%">
                     <h3 class="card-header">Delivery Address</h3>
                     <div class="row card-body">
                         <div class="col-2 d-flex justify-content-center">
@@ -128,7 +152,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                </div>
+                <div class="col-12 col-lg-6 mb-3">
+                    <div class="card mx-0" style="height: 100%">
                     <h3 class="card-header">Delivery Time</h3>
                     <div class="row card-body">
                         <div class="col-2 d-flex justify-content-center">
@@ -151,6 +177,7 @@
                             </form>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,8 +185,8 @@
     <div class="items-page opage" hidden>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-7">   
-                    <div class="card">
+                <div class="col-12 col-lg-7 mb-3">
+                    <div class="card mx-0">
                         <h3 class="card-header">Your Items</h3>
                         <div class="card-body">
                             <ul id="item-input" class="card-body">
@@ -192,8 +219,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-5">
-                    <div class="card">
+                <div class="col-12 col-lg-5">
+                    <div class="card mx-0">
                         <h4 class="card-title mx-3 my-3">Previously Saved Items</h4>
                         <ul id="saved-items-ul" class="list-group list-group-flush">
                             <li class="saved-items list-group-item">
@@ -219,7 +246,7 @@
         </div>
         <div class="friends-select container card">
             <div id="checkboxes card-body">
-              <ul id="friends-ul list-group">
+              <ul id="friends-ul list-group pl-0 ml-0" style="margin-left: 0;padding-left: 0">
                 <li class="my-2 friend-listing list-group-item">
                     <label class="f-entry" for="checkbox1">
                         <div class="f-front">
@@ -276,84 +303,91 @@
     </div>
     <div class="confirmation-page opage" hidden>
         <div class="container">
-            <div class="row confirm-row card-deck" id="confirm-section-titles">
-            
-                <div class="card">
-                    <h4 class="card-header">Details</h4>
-                    
-                    <div class="card-body" id="confirm-section-details-details">
-                        <div id="confirm-section-details-stores">
-                            <h5>Stores</h5>
-                            <span id="confirm-section-details-stores-name"></span>
+            <div class="row confirm-row" id="confirm-section-titles">
+                <div class="col-12 col-md-4 mb-3">
+                    <div style="height: 100%" class="card mx-0">
+                        <h4 class="card-header">Details</h4>
+
+                        <div class="card-body" id="confirm-section-details-details">
+                            <div id="confirm-section-details-stores">
+                                <h5>Stores</h5>
+                                <span id="confirm-section-details-stores-name"></span>
+                            </div>
+                            <div id="confirm-section-details-address">
+                                <h5>Delivery address</h5>
+                                <address class="default-address-box" id="confirm-address">
+                                    100 Lala Way <br>
+                                    Amayzin, HA 11111
+                                </address>
+                            </div>
+                            <div id="confirm-section-details-deadline">
+                                <h5>Deadline</h5>
+                                <span id="confirm-section-details-deadline-in">In about <strong>3 minutes</strong>.</span>
+                                <span id="confirm-section-details-deadline-none" hidden><strong>No specific deadlines!</strong></span>
+                            </div>
                         </div>
-                        <div id="confirm-section-details-address">
-                            <h5>Delivery address</h5>
-                            <address class="default-address-box" id="confirm-address">
-                                100 Lala Way <br>
-                                Amayzin, HA 11111
-                            </address>
-                        </div>
-                        <div id="confirm-section-details-deadline">
-                            <h5>Deadline</h5>
-                            <span id="confirm-section-details-deadline-in">In about <strong>3 minutes</strong>.</span>
-                            <span id="confirm-section-details-deadline-none" hidden><strong>No specific deadlines!</strong></span>
-                        </div>
+                        <button type="button" class="btn button-forest" id="edit-details">Edit</button>
                     </div>
-                    <button type="button" class="btn button-forest" id="edit-details">Edit</button>
                 </div>
-                <div class="card">
-                    <h4 class="card-header">Items</h4>
-                    <div class="card-body" id="confirm-section-details-items">
-                        <ul id="confirm-section-details-items-list">
-                            <li>
-                                Item name
-                            </li>
-                            <li>
-                                Item name
-                            </li>
-                            <li>
-                                Item name
-                            </li>
-                            <li>
-                                Item name
-                            </li>
-                            <li>
-                                Item name
-                            </li>
-                        </ul>
+                <div class="col-12 col-md-4 mb-3">
+                    <div style="height: 100%" class="card mx-0">
+                        <h4 class="card-header">Items</h4>
+                        <div class="card-body" id="confirm-section-details-items">
+                            <ul id="confirm-section-details-items-list">
+                                <li>
+                                    Item name
+                                </li>
+                                <li>
+                                    Item name
+                                </li>
+                                <li>
+                                    Item name
+                                </li>
+                                <li>
+                                    Item name
+                                </li>
+                                <li>
+                                    Item name
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn button-forest" id="edit-items">Edit</button>
                     </div>
-                    <button type="button" class="btn button-forest" id="edit-items">Edit</button>
                 </div>
-                <div class="card">
-                    <h4 class="card-header">Friends</h4>
-                    <div class="card-body" id="confirm-section-details-friends">
-                        <ul id="confirm-section-details-friends-list">
-                            <li>
-                                Friend name
-                            </li>
-                            <li>
-                                Friend name
-                            </li>
-                            <li>
-                                Friend name
-                            </li>
-                            <li>
-                                Friend name
-                            </li>
-                            <li>
-                                Friend name
-                            </li>
-                        </ul>
+                <div class="col-12 col-md-4 mb-3">
+                    <div style="height: 100%" class="card mx-0">
+                        <h4 class="card-header">Friends</h4>
+                        <div class="card-body" id="confirm-section-details-friends">
+                            <ul id="confirm-section-details-friends-list">
+                                <li>
+                                    Friend name
+                                </li>
+                                <li>
+                                    Friend name
+                                </li>
+                                <li>
+                                    Friend name
+                                </li>
+                                <li>
+                                    Friend name
+                                </li>
+                                <li>
+                                    Friend name
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn button-forest" id="edit-friends">Edit</button>
                     </div>
-                    <button type="button" class="btn button-forest" id="edit-friends">Edit</button>
                 </div>
             </div>
-            <div class="row mt-2" id="confirm-extra-comments">
+            <div class="row mt-2 justify-content-center" id="confirm-extra-comments">
+                <div class="col-12 col-md-10">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Extra comments</span>
                     </div>
                     <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
                 </div>
             </div>
         </div>
@@ -362,8 +396,8 @@
   </div>
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-6 col-md-3 d-flex" id="prev-button-container">
+            <div class="row justify-content-between">
+                <div class="col-4 col-md-3" id="prev-button-container">
                     <button type="button" class="float-left btn btn-lg btn-default button-forest foot-btn" id="prevbutton_items" hidden>
                         &laquo; Back
                     </button>
@@ -374,12 +408,12 @@
                         &laquo; Back
                     </button>
                 </div>
-                <div class="col-6 col-md-6" id="confirm-button-container">
-                    <a href="confirmation.html" class="btn btn-default button-forest foot-btn" id="confirmrequest" hidden>
-                        <h3>Confirm Request</h3>
+                <div class="col-4 col-md-6" id="confirm-button-container">
+                    <a href="confirmation.html" class="btn btn-default btn-lg button-forest foot-btn" id="confirmrequest" hidden>
+                        Confirm
                     </a>                    
                 </div>
-                <div class="col-6 col-md-3 d-flex" id="next-button-container">
+                <div class="col-4 col-md-3" id="next-button-container">
                     <button type="button" class="float-right btn btn-lg btn-default button-forest foot-btn" id="nextbutton_detail" disabled>
                         Next &raquo;
                     </button>
