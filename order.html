@@ -188,7 +188,9 @@
             <div class="row">
                 <div class="col-12 col-lg-7 mb-3">
                     <div class="card mx-0">
-                        <h3 class="card-header">Your Items</h3>
+                        <h3 class="card-header"><span class="my-2">Your Items</span>
+                            <button class="float-right small btn button-forest" id="show-hide-favs">Show favorites</button>
+                        </h3>
                         <div class="card-body">
                             <ul id="item-input" class="card-body">
                                 <li class="my-2 input-group">
@@ -307,7 +309,9 @@
             <div class="row confirm-row" id="confirm-section-titles">
                 <div class="col-12 col-md-4 mb-3">
                     <div style="height: 100%" class="card mx-0">
-                        <h4 class="card-header">Details</h4>
+                        <h4 class="card-header">Details
+                            <button type="button" class="btn button-forest float-right" id="edit-details">Edit</button>
+                        </h4>
 
                         <div class="card-body" id="confirm-section-details-details">
                             <div id="confirm-section-details-stores">
@@ -327,12 +331,13 @@
                                 <span id="confirm-section-details-deadline-none" hidden><strong>No specific deadlines!</strong></span>
                             </div>
                         </div>
-                        <button type="button" class="btn button-forest" id="edit-details">Edit</button>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-3">
                     <div style="height: 100%" class="card mx-0">
-                        <h4 class="card-header">Items</h4>
+                        <h4 class="card-header">Items
+                            <button type="button" class="btn button-forest float-right" id="edit-items">Edit</button>
+                        </h4>
                         <div class="card-body" id="confirm-section-details-items">
                             <ul id="confirm-section-details-items-list">
                                 <li>
@@ -352,12 +357,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <button type="button" class="btn button-forest" id="edit-items">Edit</button>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-3">
                     <div style="height: 100%" class="card mx-0">
-                        <h4 class="card-header">Friends</h4>
+                        <h4 class="card-header">Friends
+                        <button type="button" class="btn button-forest float-right" id="edit-friends">Edit</button></h4>
                         <div class="card-body" id="confirm-section-details-friends">
                             <ul id="confirm-section-details-friends-list">
                                 <li>
@@ -377,7 +382,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <button type="button" class="btn button-forest" id="edit-friends">Edit</button>
                     </div>
                 </div>
             </div>
