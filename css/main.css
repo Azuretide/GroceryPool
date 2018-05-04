@@ -16,7 +16,6 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif !important;
-  padding-bottom: 100px;
 }
 
 h3 {
@@ -164,11 +163,11 @@ main h1 {
 
 .button-forest {
   background-color: var(--main-color-dark);
-  color: white;
+  color: white !important;
 }
 .button-forest:hover {
   background-color: var(--main-color-dark-hover);
-  color: white;
+  color: white !important;
 }
 
 .button-yellow {
