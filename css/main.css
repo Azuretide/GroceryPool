@@ -16,6 +16,7 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif !important;
+  padding-bottom: 100px;
 }
 
 h3 {
@@ -26,7 +27,11 @@ h3 {
 input[type=checkbox] {
   transform: scale(1.5);
 }
-
+main{
+  display: inline-block!important;
+  width: 100%;
+  float: left;
+}
 /* Navbar Styling */
 
 #grocerypool {
@@ -195,7 +200,7 @@ main h1 {
 }
 
 .infos {
-  margin-top: 12vh;
+  margin-top: 5vh;
 }
 
 .mb-3 {
@@ -208,7 +213,8 @@ main h1 {
 
 #edit-request-body {
   margin-top: 0px !important;
-  height: 65vh;
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
 #efooter-body {
@@ -279,6 +285,7 @@ main h1 {
   display: flex;
   padding: 10px;
   position:fixed;
+  background: #fff;
   left:0px;
   bottom:0px;
   width: 100%;
@@ -287,4 +294,44 @@ main h1 {
 
 #foot-btn {
   height: 100%;
+}
+.select2-container{
+  max-width: 100%;
+}
+/* responsive styles */
+
+@media (max-width: 768px) {
+  .infos .card,
+  .infos .card .text-right{
+    text-align: center!important;
+  }
+  #logininfo{
+    display: none;
+  }
+  main h1{
+    font-size: 52px;
+  }
+  .order-progress{
+    display: none!important;
+  }
+  .f-front,
+  .f-entry,
+  li.friend-listing{
+    display: inline-block!important;
+    width: 100%;
+    float: left;
+  }
+  li.friend-listing{
+    text-align: center;
+  }
+  li.friend-listing .float-right,
+  li.friend-listing span{
+    float: left;
+    width: 100%;
+    display: inline-block;
+  }
+  #er-items{
+    height: auto;
+    min-height: 200px;
+  }
 }
