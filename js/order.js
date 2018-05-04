@@ -71,6 +71,10 @@ Util.events(document, {
 						href: "#",
 					});
 				link.innerText = "x";
+                if ($('#saved-items-ul').find('#'+saveVal.toLowerCase().replace(/ |\.|-/g, '_')).length) {
+                    return
+                }
+                newItem.id = saveVal.toLowerCase().replace(/ |\.|-/g, '_');
 				Util.events(link, {
 					"click": function(evt) {
 						deleteItem(evt);
@@ -144,6 +148,11 @@ Util.events(document, {
 				type: "text",
 				class: "col-10 item-input form-control",
 			});
+            if ($('#item-input').find('#'+text.toLowerCase().replace(/ |\.|-/g, '_')).length) {
+                return
+            }
+            inputCell.value = text;
+            inputCell.id = text.toLowerCase().replace(/ |\.|-/g, '_');
 			inputCell.value = text;
 			liItem.appendChild(inputCell);
 			liItem.appendChild(div2);
