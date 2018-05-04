@@ -66,6 +66,23 @@ Util.events(document, {
 				var newItem = Util.create("li", {
 					class: "saved-items list-group-item",
 				});
+				var link = Util.create("a", {
+						class: "mr-2 delete-item-link",
+						href: "#",
+					});
+				link.innerText = "x";
+				Util.events(link, {
+					"click": function(evt) {
+						deleteItem(evt);
+					},
+					"mouseenter": (evt) => {
+						evt.target.innerText = "x delete";
+					},
+					"mouseleave": (evt) => {
+						evt.target.innerText = "x";
+					}
+				});
+				newItem.appendChild(link);
 				var textSpan = Util.create("span", {
 					class: "saved-item-name",
 				});
@@ -81,17 +98,6 @@ Util.events(document, {
 					}
 				});
 				newItem.appendChild(textSpan);
-				newItem.appendChild(link);
-				var link = Util.create("a", {
-						class: "float-right mr-2 delete-item-link",
-						href: "#",
-					});
-				link.innerText = "x delete ";
-				Util.events(link, {
-					"mousedown": function(evt) {
-						deleteItem(evt);
-					}
-				});
 				newItem.appendChild(link);
 				if(saveVal !== "") {
 					Util.one("#saved-items-ul").appendChild(newItem);
@@ -230,6 +236,12 @@ Util.events(document, {
 			Util.events(link, {
 				"mousedown": function (evt) {
 					deleteItem(evt);
+				},
+				"mouseenter": (evt) => {
+					link.innerText = "x delete";
+				},
+				"mouseleave": (evt) => {
+					link.innerText = "x";
 				}
 			})
 		});
@@ -532,6 +544,18 @@ Util.events(document, {
 						elt.classList.remove("is-invalid");
 					});
 				}, 500);
+			}
+		});
+		Util.events(Util.one("#show-hide-favs"), {
+			"click": (evt) => {
+				var btn = Util.one("#show-hide-favs");
+				if(btn.innerText === "Show favorites") {
+					btn.innerText = "Hide favorites";
+					Util.one("#fav-item-list").hidden = false;
+				} else {
+					btn.innerText = "Show favorites";
+					Util.one("#fav-item-list").hidden = true;
+				}
 			}
 		});
 	},
