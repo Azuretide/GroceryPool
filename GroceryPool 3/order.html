@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GroceryPool</title>
+
+    <!-- Use mobile-aware viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/order.css">
+    <link rel="stylesheet" href="awesomplete/awesomplete.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- Load bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Load any supplemental Javascript libraries here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/seedrandom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <!-- Constructible EventTarget polyfill — Only Chrome 64+ supports constructible EventTarget objects natively -->
+    <script src="https://unpkg.com/event-target@latest/min.js"></script>
+
+    <!--Select2 Fields-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.stores-select').select2({
+                placeholder: "Select a store",
+                allowClear: false
+            });
+        });
+    </script>
+
+
+    <script src="js/util.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/main.js"></script>
+    <script src="awesomplete/awesomplete.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="navbar navbar-dark box-shadow fixed-top green">
+        <div class="container" id="navbar-body">
+            <a href="index.html" class="navbar-brand d-flex align-items-center real-link">
+                <h3 id="grocerypool">GroceryPool</h3>
+            </a>
+            <div class="col-3 text-right" id="navbar-right">
+                <span class="text-white mr-3" id="logininfo">Hi, Sarah!</span>
+                <a href="#3" class="navbar-toggler pt-1 pb-2" onclick="toggleInfo()">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+
+                <div class="user_info_header">
+                    <div class="user_info_blk text-white">
+                        <div class="user_avatar text-center">
+                            <i class="material-icons" style="font-size: 200px">mood</i>
+                        </div>
+                            <h5>Sarah</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#3">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Manage Friends</a>
+                                </li>
+                                <li>
+                                    <a href="my_requests.html" class="real-link">Your Requests</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Your Deliveries</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ </header>
+
+  <div class="content">
+    <div class="order-progress col-md">
+        <button type="button" class="btn btn-arrow-right crumb crumb-active" id="cinfo"><i class="material-icons crumbi">info</i><h3>Details</h3></button>
+        <button type="button" class="btn btn-arrow-right crumb" id="citems" disabled><i class="material-icons crumbi">shopping_cart</i><h3>Items</h3></button>
+        <button type="button" class="btn btn-arrow-right crumb" id="cfriends" disabled><i class="material-icons crumbi">face</i><h3>Friends</h3></button>
+        <button type="button" class=" btn btn-arrow-right crumb" id="cconfirm" disabled><i class="material-icons crumbi">check_circle</i><h3>Confirm</h3></button>
+    </div>
+
+    <!-- Add four different pages in the html, we will hide and show accordingly -->
+    <div class="paging">
+
+    <div class="details-page opage">
+        <div class="store-search-bar d-flex" id="storesec">
+            <div class="container search-bar-container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h3 id="store-label">Store</h3>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-10 col-12">
+                        <select class="form-control stores-select w-100" id="search-bar" name="Stores" multiple>
+                            <option value="Trader Joe's">Trader Joe's</option>
+                            <option value="Star Market (Shaw's)">Star Market (Shaw's)</option>
+                            <option value="Costco">Costco</option>
+                            <option value="H-mart">H-mart</option>
+                            <option value="7/11">7/11</option>
+                            <option value="Safeway">Safeway</option>
+                            <option value="Walmart">Walmart</option>
+                        </select>
+                        <!--<input type="text" class="form-control awesomplete" id="search-bar" placeholder="Search store..." data-list="Trader Joe's, Star Market (Shaw's), Costco, H-mart, 7/11, Safeway, Walmart">-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row delivery-details">
+                <div class="col-12 col-lg-6 mb-3">
+                    <div class="card mx-0" style="height: 100%">
+                    <h3 class="card-header">Delivery Address</h3>
+                    <div class="row card-body">
+                        <div class="col-2 d-flex justify-content-center">
+                            <i class="material-icons" style="font-size: 45px">home</i>
+                        </div>
+                        <div class="col">
+                            <form action="">
+                                <div class="row" id="new-address-form">
+                                    <input type="radio" name="Radio" id="default-address" class="col-1 mt-2" value="100 Lala Way, Amayzin, HA 11111" checked>
+                                    <address class="default-address-box" class="col">
+                                        100 Lala Way <br>
+                                        Amayzin, HA 11111
+                                    </address>
+                                    <div class="w-100"></div>
+                                    <input type="radio" name="Radio" id="new-address" class="col-1  mt-2">
+                                    <textarea type="textarea" id="new-address-text" class="col-8" rows="3" placeholder="A different address"></textarea>
+                                    <div class="w-100"></div>
+                                    <button class="col-3 offset-1 btn button-forest" type="button" name="button" id="add-new-address">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-12 col-lg-6 mb-3">
+                    <div class="card mx-0" style="height: 100%">
+                    <h3 class="card-header">Delivery Time</h3>
+                    <div class="row card-body">
+                        <div class="col-2 d-flex justify-content-center">
+                            <i class="material-icons" style="font-size: 45px">watch_later</i>
+                        </div>
+                        <div class="col" id="time-input">
+                            <form class="form-inline">
+                                In about
+                                <input type="text" name="time-length" class="mx-2 form-control" id="deadline-to">
+                                <select class="mx-1 form-control" name="time-period" id="time-period">
+                                    <option value="minutes">minutes</option>
+                                    <option value="hours">hours</option>
+                                    <option value="days">days</option>
+                                    <option value="weeks">weeks</option>
+                                </select>
+                            </form>
+                            <span id="timeor">Or</span>
+                            <form class="form-inline">
+                                <input type="checkbox" name="deadline" class="mx-2" id="no-deadline"><label for="no-deadline"> No deadline</label>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="items-page opage" hidden>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-7 mb-3">
+                    <div class="card mx-0">
+                        <h3 class="card-header">Your Items</h3>
+                        <div class="card-body">
+                            <ul id="item-input" class="card-body">
+                                <li class="my-2 input-group">
+                                    <input type="text" class="form-control col-10 item-input" placeholder="e.g. 12 eggs">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><i class="material-icons">save</i></div>
+                                    </div>
+                                </li>
+                                <li class="my-2 input-group">
+                                    <input type="text" class="form-control col-10 item-input" placeholder="or 5 lbs of rice">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><i class="material-icons">save</i></div>
+                                    </div>
+                                </li>
+                                <li class="my-2 input-group">
+                                    <input type="text" class="form-control col-10 item-input">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><i class="material-icons">save</i></div>
+                                    </div>
+                                </li>
+                                <li class="my-2 input-group">
+                                    <input type="text" class="form-control col-10 item-input">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><i class="material-icons">save</i></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a id="add-another-item" class="btn btn-primary btn-success">+ Add another</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="card mx-0">
+                        <h4 class="card-title mx-3 my-3">Previously Saved Items</h4>
+                        <ul id="saved-items-ul" class="list-group list-group-flush">
+                            <li class="saved-items list-group-item">
+                                <span class="saved-item-name">7 lbs of ribeye steak</span>
+                                <a href="#" class="float-right add-item-link">+ add</a>
+                                <a href="#" class="float-right delete-item-link mr-2">x delete</a>
+                            </li>
+                            <li class="saved-items list-group-item">
+                                <span class="saved-item-name">6 fl. oz. Organic fat-free llama milk</span>
+                                <a href="#" class="float-right add-item-link">+ add</a>
+                                <a href="#" class="float-right delete-item-link mr-2">x delete</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="friends-page opage" hidden>
+        <div class="friends-info-bar">
+            <p class="help lead">Select friends you want to request from. <br>
+                Hopefully, one of them will accept your request!<p>
+        </div>
+        <div class="friends-select container card">
+            <div id="checkboxes card-body">
+              <ul id="friends-ul list-group pl-0 ml-0" style="margin-left: 0;padding-left: 0">
+                <li class="my-2 friend-listing list-group-item">
+                    <label class="f-entry" for="checkbox1">
+                        <div class="f-front">
+                            <input type="checkbox" id="checkbox1" class="friend-check">
+                            <i class="material-icons ifriend mx-4">mood</i>
+                            <span class="friend-name">Michaelangelo</span>
+                        </div>
+                        <span class="float-right next-trip text-muted">Next trip: in 3 hours</span>
+                    </label>
+                </li>
+                <li class="my-2 friend-listing list-group-item">
+                    <label class="f-entry" for="checkbox2">
+                        <div class="f-front">
+                            <input type="checkbox" id="checkbox2" class="friend-check">
+                            <i class="material-icons ifriend mx-4">mood</i>
+                            <span class="friend-name">Donatello</span>
+                        </div>
+                        <span class="float-right next-trip text-muted">Next trip: in 7 days</span>
+                    </label>
+                </li>
+                <li class="my-2 friend-listing list-group-item">
+                    <label class="f-entry" for="checkbox3">
+                        <div class="f-front">
+                            <input type="checkbox" id="checkbox3" class="friend-check">
+                            <i class="material-icons ifriend mx-4">mood</i>
+                            <span class="friend-name">Raphael</span>
+                        </div>
+                        <span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+                    </label>
+                </li>
+                <li class="my-2 friend-listing list-group-item">
+                    <label class="f-entry" for="checkbox4">
+                        <div class="f-front">
+                            <input type="checkbox" id="checkbox4" class="friend-check">
+                            <i class="material-icons ifriend mx-4">mood</i>
+                            <span class="friend-name">Davinci</span>
+                        </div>
+                        <span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+                    </label>
+                </li>
+                <li class="my-2 friend-listing list-group-item">
+                    <label class="f-entry" for="checkbox5">
+                        <div class="f-front">
+                            <input type="checkbox" id="checkbox5" class="friend-check">
+                            <i class="material-icons ifriend mx-4">mood</i>
+                            <span class="friend-name">Pierogi</span>
+                        </div>
+                        <span class="float-right next-trip" hidden>Next trip: in 3 hours</span>
+                    </label>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </div>
+    <div class="confirmation-page opage" hidden>
+        <div class="container">
+            <div class="row confirm-row" id="confirm-section-titles">
+                <div class="col-12 col-md-4 mb-3">
+                    <div style="height: 100%" class="card mx-0">
+                        <h4 class="card-header">Details</h4>
+
+                        <div class="card-body" id="confirm-section-details-details">
+                            <div id="confirm-section-details-stores">
+                                <h5>Stores</h5>
+                                <span id="confirm-section-details-stores-name"></span>
+                            </div>
+                            <div id="confirm-section-details-address">
+                                <h5>Delivery address</h5>
+                                <address class="default-address-box" id="confirm-address">
+                                    100 Lala Way <br>
+                                    Amayzin, HA 11111
+                                </address>
+                            </div>
+                            <div id="confirm-section-details-deadline">
+                                <h5>Deadline</h5>
+                                <span id="confirm-section-details-deadline-in">In about <strong>3 minutes</strong>.</span>
+                                <span id="confirm-section-details-deadline-none" hidden><strong>No specific deadlines!</strong></span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn button-forest" id="edit-details">Edit</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <div style="height: 100%" class="card mx-0">
+                        <h4 class="card-header">Items</h4>
+                        <div class="card-body" id="confirm-section-details-items">
+                            <ul id="confirm-section-details-items-list">
+                                <li>
+                                    Item name
+                                </li>
+                                <li>
+                                    Item name
+                                </li>
+                                <li>
+                                    Item name
+                                </li>
+                                <li>
+                                    Item name
+                                </li>
+                                <li>
+                                    Item name
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn button-forest" id="edit-items">Edit</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <div style="height: 100%" class="card mx-0">
+                        <h4 class="card-header">Friends</h4>
+                        <div class="card-body" id="confirm-section-details-friends">
+                            <ul id="confirm-section-details-friends-list">
+                                <li>
+                                    Friend name
+                                </li>
+                                <li>
+                                    Friend name
+                                </li>
+                                <li>
+                                    Friend name
+                                </li>
+                                <li>
+                                    Friend name
+                                </li>
+                                <li>
+                                    Friend name
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn button-forest" id="edit-friends">Edit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-center" id="confirm-extra-comments">
+                <div class="col-12 col-md-10">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Extra comments</span>
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-4 col-md-3" id="prev-button-container">
+                    <button type="button" class="float-left btn btn-lg btn-default button-forest foot-btn" id="prevbutton_items" hidden>
+                        &laquo; Back
+                    </button>
+                    <button type="button" class="float-left btn btn-lg btn-default button-forest foot-btn" id="prevbutton_friends" hidden>
+                        &laquo; Back
+                    </button>
+                    <button type="button" class="float-left btn btn-lg btn-default button-forest foot-btn" id="prevbutton_confirm" hidden>
+                        &laquo; Back
+                    </button>
+                </div>
+                <div class="col-4 col-md-6" id="confirm-button-container">
+                    <a href="confirmation.html" class="btn btn-default btn-lg button-forest foot-btn" id="confirmrequest" hidden>
+                        Confirm
+                    </a>                    
+                </div>
+                <div class="col-4 col-md-3" id="next-button-container">
+                    <button type="button" class="float-right btn btn-lg btn-default button-forest foot-btn" id="nextbutton_detail" disabled>
+                        Next &raquo;
+                    </button>
+                    <button type="button" class="float-right btn btn-lg btn-default button-forest foot-btn" id="nextbutton_items" hidden disabled>
+                        Next &raquo;
+                    </button>
+                    <button type="button" class="float-right btn btn-lg btn-default button-forest foot-btn" id="nextbutton_friends" hidden disabled>
+                        Next &raquo;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

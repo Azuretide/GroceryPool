@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GroceryPool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body>
+
+  <header>
+    <div class="navbar navbar-dark box-shadow fixed-top green">
+        <div class="container" id="navbar-body">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <h3 id="grocerypool">GroceryPool</h3>
+            </a>
+            <div class="col-3 text-right" id="navbar-right">
+                <span class="text-white mr-3" id="logininfo">Hi, Sarah!</span>
+                <a href="#3" class="navbar-toggler pt-1 pb-2" onclick="toggleInfo()">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+
+                <div class="user_info_header">
+                    <div class="user_info_blk text-white">
+                        <div class="user_avatar text-center">
+                            <i class="material-icons" style="font-size: 200px">mood</i>
+                        </div>
+                            <h5>Sarah</h5>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#3">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Manage Friends</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Your Requests</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Your Deliveries</a>
+                                </li>
+                                <li>
+                                    <a href="#3">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ </header>
+
+<main class="home_page cart-background">
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="min-height: 100vh">
+            <div class="col-11 col-md-10 col-lg-8 text-center form">
+                <h1>Welcome!</h1>
+                <h2>What would you like to do?</h2>
+                <div class="row justify-content-center action mt-5">
+                    <div class="col-12 col-md-5 col-lg-4">
+                        <a href="order.html" class="btn btn-lg button-yellow">Start New Request</a>
+                    </div>
+                    <div class="col-12 col-md-2 my-2">
+                    <h3 class="mx-4">OR</h3>
+                    </div>
+                        <div class="col-12 col-md-5 col-lg-4">
+                    <a href="my_requests.html" class="btn btn-lg button-forest">Manage Requests</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

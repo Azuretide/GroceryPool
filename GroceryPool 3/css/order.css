@@ -1,0 +1,288 @@
+/*Styling for the Order Page*/
+
+
+/* Breadcrumbs Styling */
+
+.order-progress {
+	height: 9.5vh;
+	display: flex;
+	padding: 0px !important;
+}
+
+.crumb {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--progress-color);
+	flex-grow: 1;
+}
+
+.crumbi {
+	font-size: 35px !important;
+	margin-right: 15px;
+}
+
+.crumb-active {
+	background-color: var(--accent-color);
+}
+
+button:disabled,
+button[disabled] {
+  background: lightgray !important;
+  color: gray !important;
+  cursor: not-allowed;
+  opacity: 1 !important;
+}
+
+h4 {
+	margin: 0px !important;
+}
+
+/* Below code sourced from: http://code-chunk.com/chunks/543df4c394758/bootstrap-arrow-shaped-buttons */
+.btn-arrow-right {
+    position: relative;
+    padding-left: 36px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after { /* make two squares (before and after), looking similar to the button */
+    content:"";
+    position: absolute;
+    top: 7px; /* move it down because of rounded corners */
+    width: 6.72vh; /* same as height */
+    height: 6.72vh; /* button_outer_height / sqrt(2) */
+    background: inherit; /* use parent background */
+    border: inherit; /* use parent border */
+    border-left-color: transparent; /* hide left border */
+    border-bottom-color: transparent; /* hide bottom border */
+    border-radius: 0px 4px 0px 0px; /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+    -webkit-border-radius: 0px 4px 0px 0px;
+    -moz-border-radius: 0px 4px 0px 0px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after {
+    transform: rotate(45deg); /* rotate right arrow squares 45 deg to point right */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+.btn-arrow-right:before { /* align the "before" square to the left */
+    left: -3.36vh;
+}
+.btn-arrow-right:after { /* align the "after" square to the right */
+    right: -3.36vh;
+    background: inherit;
+}
+.btn-arrow-right:after { /* bring arrow pointers to front */
+    z-index: 1;
+}
+.btn-arrow-right:before { /* hide arrow tails background */
+    background-color: black;
+}
+
+#cinfo:before {
+	display: none;
+}
+
+#cconfirm:after {
+	display: none;
+}
+
+
+
+/* Page Body */
+
+.opage {
+	height: 71vh;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	overflow-y: auto;
+}
+
+
+/* Details Page */
+
+#storesec {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 10px;
+}
+
+#store-label {
+	text-align: center;
+	margin-bottom: 10px !important;
+}
+
+.store-search-bar {
+	height: 15vh;
+}
+
+.delivery-details {
+	height: 100%;
+}
+
+.icontain {
+	text-align: center;
+}
+
+#add-new-address {
+	margin-top: 10px;
+}
+
+#deadline-to {
+	width: 100px;
+}
+
+#time-input {
+	display: flex;
+	flex-direction: column;
+}
+
+#timeor {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/* Items Page */
+
+#item-input, #saved-items-ul, #friends-ul {
+	padding: 0px !important;
+}
+
+.items-page ul {
+	list-style-type: none;
+}
+
+.saved-items {
+	padding: 5px;
+	border: thin solid black;
+}
+
+.input-group-text {
+	cursor: pointer;
+}
+
+.input-group-text:hover {
+	background-color: var(--progress-color);
+	color: var(--main-color-dark);
+	border: 1px solid var(--main-color) !important;
+}
+
+.delete-item-link {
+	color: var(--danger);
+}
+
+/* Friends Page */
+
+.friends-info-bar {
+	text-align: center;
+}
+.friends-select {
+	height: 70%;
+	width: 80% !important;
+	overflow-y: auto;
+}
+
+.friends-select li {
+	list-style-type: none;
+	border: thin solid black;
+}
+
+.friends-select li label {
+	width: 100%;
+}
+
+.help {
+	font-size: 1.5rem;
+}
+
+.friend-listing {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 5px;
+	font-size: 1.2em;
+}
+
+.f-entry {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0px !important;
+}
+
+.f-front {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ifriend {
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 50px !important;
+}
+
+/* Confirmation page */
+
+.confirmation-page {
+	font-size: 14px;
+}
+
+#confirm-section-titles {
+	height: 20%;
+}
+
+#confirm-section-details {
+	height: 40vh;
+}
+
+#confirm-section-details-stores, #confirm-section-details-address {
+	margin-bottom: 8px !important;
+}
+
+#confirm-address {
+	margin-bottom: 0px !important;
+}
+
+#confirm-section-edit-buttons {
+	height: 10%;
+}
+
+#confirm-extra-comments {
+	margin-top: 15px !important;
+}
+
+.confirm-row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.confirm-edit {
+	margin-top: 8px !important;
+}
+
+/* Footer Styling */
+
+#confirmrequest {
+	width: 100%;
+}
+
+#prev-button-container {
+	display: flex;
+	justify-content: flex-start;
+}
+
+#next-button-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#confirm-button-container {
+	display: flex;
+	justify-content: center;
+}
