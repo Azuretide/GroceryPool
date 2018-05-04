@@ -121,7 +121,7 @@ Util.events(document, {
 			var saveIcon = Util.create("i", {
 				class: "material-icons",
 			});
-			saveIcon.innerText = "save";
+			saveIcon.innerText = "star";
 
 			var div1 = Util.create("div", {
 				class: "input-group-text",
