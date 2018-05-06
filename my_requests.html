@@ -12,7 +12,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/util.js"></script>
+    <script src="js/moment.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/my_requests.js"></script>
 
 </head>
 <body>
@@ -75,10 +77,10 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10 text-center-mobile">
+<!--             <div class="col-12 col-md-10 text-center-mobile">
                 <p>This is the history of the requests you made</p>
-            </div>
-            <div class="col-12 col-md-10">
+            </div> -->
+            <div class="col-12 col-md-10" id="mr-container">
                 <div class="card py-3 mb-4 status-requested">
                     <div class="row justify-content-center align-items-center mx-0">
                         <div class="col-12 col-md-2">
@@ -86,9 +88,9 @@
                         </div>
                         <div class="col-12 col-md-7">
                             <h4 class="mb-2 mt-0">Status: <strong class="text-uppercase">REQUESTED</strong></h4>
-                            <p class="mb-0">Shopping List: Ribeye Steak</p>
-                            <p class="mb-0">Delivery time: 2 hours</p>
-                            <p class="mb-0">Requested: Just Now</p>
+                            <p class="mb-0" id="mr-items">Shopping List: Ribeye Steak</p>
+                            <p class="mb-0" id="mr-delivery">Delivery: in about 2 hours to 100 Lala Way</p>
+                            <p class="mb-0" id="mr-req">Requested: Just Now</p>
                         </div>
                         <div class="col-12 col-md-3 text-right">
                             <a href="edit_request.html" class="btn button-yellow">Edit</a>
@@ -103,9 +105,9 @@
                         </div>
                         <div class="col-12 col-md-7">
                             <h4 class="mb-2 mt-0">Status: <strong class="text-uppercase">Accepted</strong></h4>
-                            <p class="mb-0">Shopping List: Milk, Eggs</p>
-                            <p class="mb-0">Delivery time: 2 hours</p>
-                            <p class="mb-0">Requested: 3 min ago</p>
+                            <p class="mb-0">Shopping List: Milk,Eggs</p>
+                            <p class="mb-0">Delivery: to 77 Massachusetts Ave</p>
+                            <p class="mb-0">Requested: Mar 30 2018 11:59 pm</p>
                         </div>
                         <div class="col-12 col-md-3 text-right">
                             <a href="#3" class="btn button-forest">Details</a>

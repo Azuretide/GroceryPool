@@ -469,6 +469,10 @@ Util.events(document, {
 							friendsList.push(f.innerText);
 						});
 						localStorage.setItem('friends', friendsList);
+
+						// Misc
+						localStorage.setItem('comments', Util.one('#conf-comments').value);
+						localStorage.setItem('req', moment().format('MMM D YYYY h:mm a'));
 					});
 				}
 			});
