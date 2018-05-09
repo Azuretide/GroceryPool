@@ -3,7 +3,7 @@
 /* Global Variables */
 :root {
   --main-color: #2db92d; /*Main Interface Color*/
-  --main-color-dark: #196719; /*Button Color*/
+  --main-color-dark: #2db92d; /*Button Color*/
   --main-color-dark-hover: #145214; /*Button Color on hover*/
   --progress-color: #d6f5d6; /*Color of inactive chevrons*/
   --accent-color: #f1d85b; /*Secondary Interface Color*/
